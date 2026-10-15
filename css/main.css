@@ -1,0 +1,10 @@
+@layer reset, base, layout, components, utilities;
+@layer base {
+  body {
+    margin: 0;
+    background-color: #ffffff;
+    color: #171717;
+    font-family: "Inter", sans-serif;
+    padding: 1rem;
+  }
+}

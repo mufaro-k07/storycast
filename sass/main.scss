@@ -1,0 +1,15 @@
+@use "colors" as colors;
+@use "typography" as typography;
+@use "spacing" as spacing;
+
+@layer reset, base, layout, components, utilities;
+
+@layer base {
+    body {
+        margin: 0;
+        background-color: colors.$background;
+        color: colors.$text;
+        font-family: typography.$font-body;
+        padding: spacing.$spacing-base;
+    }
+}
