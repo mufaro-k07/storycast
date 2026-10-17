@@ -187,12 +187,48 @@
 
 // Chapter number
   .chapter-number {
-    color: $color-decorative-number;
+    color: var(--color-decorative-number);
     font-family: $font-display;
     font-size: $font-size-chapter;
     font-weight: $font-weight-display;
     font-synthesis: none;
     line-height: 0.9;
+  }
+
+// Media placeholder
+  .media-placeholder {
+    display: grid;
+    align-content: center;
+    gap: $space-2;
+    padding: $space-5;
+    border: 2px dashed $color-border;
+    background-color: $color-bg-muted;
+    color: $color-text-primary;
+  }
+
+  .media-placeholder__status {
+    color: var(--color-text-accent);
+    font-size: $font-size-eyebrow;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    line-height: $line-height-ui;
+    text-transform: uppercase;
+  }
+
+  .media-placeholder--video {
+    --color-text-accent: #{$color-text-accent-on-dark};
+
+    aspect-ratio: 16 / 9;
+    justify-items: center;
+    padding: $space-layout-gap;
+    border-color: $color-mid-grey;
+    background-color: $color-bg-dark;
+    color: $color-text-inverse;
+    text-align: center;
+
+    > p {
+      max-inline-size: $measure;
+    }
   }
 
   .eyebrow {

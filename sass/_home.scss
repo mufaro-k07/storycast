@@ -240,27 +240,6 @@
     gap: $space-3;
   }
 
-  .audio-feature__player {
-    display: grid;
-    gap: $space-2;
-    padding: $space-5;
-    border: 2px solid $color-border;
-  }
-
-  .audio-feature__player--pending {
-    border-style: dashed;
-    background-color: $color-bg-muted;
-  }
-
-  .audio-feature__status {
-    color: var(--color-text-accent);
-    font-size: $font-size-eyebrow;
-    font-weight: $font-weight-semibold;
-    letter-spacing: $letter-spacing-eyebrow;
-    line-height: $line-height-ui;
-    text-transform: uppercase;
-  }
-
 // Access formats
   .access-formats__grid {
     display: grid;

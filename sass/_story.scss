@@ -1,0 +1,411 @@
+@use "tokens" as *;
+
+@layer components {
+// Story intro
+  .story-intro {
+    padding-block: $space-section;
+  }
+
+  .story-intro__inner {
+    display: grid;
+    gap: $space-6;
+
+    @include from("lg") {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: $space-layout-gap;
+    }
+  }
+
+  .story-intro__title {
+    margin-block-start: $space-4;
+    font-size: $font-size-hero;
+    line-height: $line-height-tight;
+  }
+
+  .story-intro__subtitle {
+    margin-block-start: $space-4;
+    font-family: $font-display;
+    font-size: $font-size-card-heading;
+    line-height: $line-height-heading;
+  }
+
+  .story-intro__details {
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+    max-inline-size: $measure;
+  }
+
+  .story-intro__metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3 $space-6;
+    padding-block-end: $space-4;
+    border-block-end: 1px solid $color-border-subtle;
+  }
+
+  .story-intro__meta-item dt {
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    text-transform: uppercase;
+  }
+
+  .story-intro__meta-item dd {
+    font-weight: $font-weight-semibold;
+  }
+
+  .story-intro__jump-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: $space-5;
+  }
+
+  .story-intro__track {
+    display: none;
+
+    @include from("lg") {
+      display: block;
+      inline-size: rem(160);
+      margin-inline-start: auto;
+    }
+  }
+
+  .story-intro__art {
+    margin-block-start: $space-layout-gap;
+  }
+
+  .story-intro__art-image {
+    inline-size: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 58% 60%;
+
+    @include from("md") {
+      aspect-ratio: auto;
+    }
+  }
+
+// Video
+  .story-video__description {
+    max-inline-size: $measure;
+  }
+
+// Chapters
+  .race-chapter__inner {
+    display: grid;
+    gap: $space-5;
+
+    @include from("lg") {
+      grid-template-columns: rem(208) minmax(0, 1fr) minmax(0, 1fr);
+      align-items: start;
+      column-gap: $space-layout-gap;
+    }
+  }
+
+  .race-chapter__number {
+    white-space: nowrap;
+  }
+
+  .race-chapter__content {
+    display: grid;
+    gap: $space-4;
+    max-inline-size: $measure;
+  }
+
+  .race-chapter__media {
+    margin-block-start: $space-3;
+
+    @include from("lg") {
+      margin-block-start: 0;
+    }
+  }
+
+  .race-chapter__media img {
+    inline-size: 100%;
+  }
+
+  .race-chapter__media figcaption {
+    margin-block-start: $space-3;
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+  }
+
+  // Chapter 03: the restart gets a wider illustration and a red rule
+  .race-chapter--feature {
+    border-block-start: 6px solid $color-accent;
+
+    .race-chapter__inner {
+      @include from("lg") {
+        grid-template-columns: rem(208) minmax(0, 4fr) minmax(0, 6fr);
+      }
+    }
+  }
+
+// Driver list (chapter 04)
+  .driver-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: $space-4;
+  }
+
+  .driver-list__item {
+    padding: $space-4 $space-5;
+    border-inline-start: 4px solid $color-accent;
+    background-color: $color-bg-light;
+  }
+
+  .driver-list__name {
+    font-family: $font-display;
+    font-size: $font-size-card-heading;
+    line-height: $line-height-heading;
+  }
+
+  .driver-list__team {
+    margin-block-start: $space-1;
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    text-transform: uppercase;
+  }
+
+  .driver-list__role {
+    margin-block-start: $space-2;
+  }
+
+// Results (chapter 05)
+  .race-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: $space-5;
+  }
+
+  .race-results__group {
+    padding: $space-5;
+    border: 1px solid $color-border-subtle;
+  }
+
+  .race-results__group--official {
+    border: 2px solid $color-border;
+    border-block-start: 6px solid $color-accent;
+  }
+
+  .race-results__heading {
+    margin-block-end: $space-3;
+  }
+
+  .race-results__list {
+    padding-inline-start: 1.5em;
+  }
+
+  .race-results__list li {
+    padding-block: $space-2;
+    border-block-end: 1px solid $color-border-subtle;
+  }
+
+  .race-results__list li:last-child {
+    border-block-end: 0;
+  }
+
+  .race-results__list li::marker {
+    color: var(--color-text-accent);
+    font-weight: $font-weight-semibold;
+  }
+
+  .race-results__note {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+  }
+
+// Pull quote
+  .pull-quote__figure {
+    display: grid;
+    gap: $space-5;
+  }
+
+  .pull-quote__text {
+    max-inline-size: 20ch;
+    padding-inline-start: $space-6;
+    border-inline-start: 10px solid $color-accent;
+    color: $color-text-large-accent;
+    font-family: $font-display;
+    font-size: $font-size-feature-heading;
+    line-height: $line-height-heading;
+    text-wrap: balance;
+  }
+
+  .pull-quote__caption {
+    padding-inline-start: calc($space-6 + 10px);
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    text-transform: uppercase;
+  }
+
+// Timeline
+  .race-timeline__inner {
+    @include from("lg") {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      align-items: start;
+      gap: $space-layout-gap;
+    }
+  }
+
+  // The vertical line and dots are decorative; order comes from the <ol>
+  .race-timeline__list {
+    position: relative;
+  }
+
+  .race-timeline__list::before {
+    content: "";
+    position: absolute;
+    inset-block: $space-5;
+    inset-inline-start: rem(7);
+    inline-size: 2px;
+    background-color: $color-border-on-dark;
+  }
+
+  .race-timeline__item {
+    position: relative;
+    padding-inline-start: $space-7;
+  }
+
+  .race-timeline__item::before {
+    content: "";
+    position: absolute;
+    inset-block-start: rem(22);
+    inset-inline-start: 0;
+    inline-size: rem(16);
+    block-size: rem(16);
+    border-radius: 50%;
+    background-color: $color-accent;
+  }
+
+  .race-timeline__details {
+    border-block-end: 1px solid $color-border-on-dark;
+  }
+
+  .race-timeline__summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "when icon"
+      "event icon";
+    align-items: center;
+    gap: $space-1 $space-4;
+    min-block-size: $target-min-size;
+    padding-block: $space-4;
+    font-weight: $font-weight-semibold;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .race-timeline__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .race-timeline__summary::after {
+    content: "+";
+    content: "+" / "";
+    grid-area: icon;
+    font-size: $font-size-card-heading;
+    line-height: 1;
+  }
+
+  .race-timeline__details[open] > .race-timeline__summary::after {
+    content: "\2212";
+    content: "\2212" / "";
+  }
+
+  .race-timeline__when {
+    grid-area: when;
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+    letter-spacing: $letter-spacing-eyebrow;
+    text-transform: uppercase;
+  }
+
+  .race-timeline__event {
+    grid-area: event;
+  }
+
+  @include from("md") {
+    .race-timeline__summary {
+      grid-template-columns: min(8.5rem, 35%) minmax(0, 1fr) auto;
+      grid-template-areas: "when event icon";
+    }
+  }
+
+  .race-timeline__details > p {
+    max-inline-size: $measure;
+    padding-block-end: $space-4;
+  }
+
+// Strategy question
+  .strategy__inner {
+    max-inline-size: calc(rem(800) + 2 * $gutter);
+  }
+
+  .strategy__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-4;
+    margin-block: $space-5;
+  }
+
+  .strategy__options .button[aria-pressed="true"] {
+    border-color: $color-border;
+    box-shadow: inset 0 0 0 2px $color-white;
+  }
+
+  .strategy__options .button[aria-pressed="true"]::before {
+    content: "\2713";
+    content: "\2713" / "";
+  }
+
+  .strategy__answer {
+    padding: $space-4 $space-5;
+    border-inline-start: 4px solid $color-accent;
+    background-color: $color-bg-light;
+  }
+
+  .strategy__note {
+    margin-block-start: $space-5;
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+  }
+
+// Transcript
+  .story-transcript__content {
+    max-inline-size: $measure;
+  }
+
+// Related
+  .related__list {
+    display: grid;
+    gap: $space-card-gap;
+
+    @include from("md") {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .related__item {
+    display: grid;
+    align-content: start;
+    gap: $space-2;
+    padding: $space-card-padding;
+    background-color: $color-bg-light;
+  }
+
+  .related__link {
+    font-family: $font-display;
+    font-size: $font-size-card-heading;
+    line-height: $line-height-heading;
+  }
+}

@@ -13,6 +13,7 @@ $color-text-secondary: $color-graphite;
 $color-text-inverse: $color-white;
 $color-text-accent: $color-dark-red;
 $color-text-accent-on-dark: $color-white;
+$color-text-muted-on-dark: $color-mid-grey;
 
 // Links
 $color-link: $color-dark-red;
@@ -38,7 +39,10 @@ $color-border: $color-racing-black;
 $color-border-subtle: $color-mid-grey;
 $color-border-on-dark: $color-graphite;
 $color-accent: $color-racing-red;
+// Racing red as text only at large sizes (4.97:1 white, 4.52:1 off-white)
+$color-text-large-accent: $color-racing-red;
 $color-decorative-number: $color-mid-grey;
+$color-decorative-number-on-dark: $color-graphite;
 
 $color-focus: $color-dark-red;
 $color-focus-on-dark: $color-white;

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="620" viewBox="0 0 1280 620">
+  <!-- Original StoryCast artwork, extracted from design_reference/story-desktop.svg (group race-art-762). Decorative. -->
+  <rect width="1280" height="620" fill="#15151E"/>
+  <polygon points="0,620 486.4,0 793.6,0 307.2,620" fill="#333333"/>
+  <polygon points="742.4,620 1049.6,0 1280,0 1280,620" fill="#B00000"/>
+  <g stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.7">
+    <line x1="-50" y1="70" x2="1330" y2="20"/>
+    <line x1="-50" y1="135" x2="1330" y2="85"/>
+    <line x1="-50" y1="200" x2="1330" y2="150"/>
+    <line x1="-50" y1="265" x2="1330" y2="215"/>
+    <line x1="-50" y1="330" x2="1330" y2="280"/>
+    <line x1="-50" y1="395" x2="1330" y2="345"/>
+    <line x1="-50" y1="460" x2="1330" y2="410"/>
+  </g>
+  <polygon points="592.4,382.2 647.4,337.2 777.4,319.2 867.4,351.2 912.4,395.2 592.4,395.2" fill="#E10600"/>
+  <rect x="657.4" y="313.2" width="82" height="27" fill="#FFFFFF"/>
+  <circle cx="647.4" cy="399.2" r="28" fill="#15151E" stroke="#FFFFFF" stroke-width="4"/>
+  <circle cx="857.4" cy="399.2" r="28" fill="#15151E" stroke="#FFFFFF" stroke-width="4"/>
+</svg>

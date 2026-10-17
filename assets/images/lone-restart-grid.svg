@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="420" viewBox="0 0 580 420" font-family="Poppins, Arial, sans-serif">
+  <!-- Original StoryCast schematic of the restart, based on design_reference/story-desktop.svg (group lone-grid). Not to scale. -->
+  <rect width="580" height="420" fill="#15151E"/>
+  <text x="40" y="34" fill="#FFFFFF" font-size="13" font-weight="700" letter-spacing="2">STARTING GRID</text>
+  <g stroke="#333333" stroke-width="2">
+    <line x1="40" y1="80" x2="400" y2="80"/>
+    <line x1="40" y1="125" x2="400" y2="125"/>
+    <line x1="40" y1="170" x2="400" y2="170"/>
+    <line x1="40" y1="215" x2="400" y2="215"/>
+    <line x1="40" y1="260" x2="400" y2="260"/>
+    <line x1="40" y1="305" x2="400" y2="305"/>
+    <line x1="40" y1="350" x2="400" y2="350"/>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.6">
+    <rect x="200" y="107" width="56" height="36"/>
+    <rect x="80" y="152" width="56" height="36"/>
+    <rect x="200" y="197" width="56" height="36"/>
+    <rect x="80" y="242" width="56" height="36"/>
+    <rect x="200" y="287" width="56" height="36"/>
+    <rect x="80" y="332" width="56" height="36"/>
+  </g>
+  <rect x="80" y="62" width="56" height="36" fill="#E10600"/>
+  <text x="108" y="86" fill="#FFFFFF" font-size="15" font-weight="700" text-anchor="middle">44</text>
+
+  <text x="450" y="34" fill="#FFFFFF" font-size="13" font-weight="700" letter-spacing="2">PIT LANE</text>
+  <rect x="440" y="52" width="110" height="336" fill="#333333"/>
+  <g fill="#FFFFFF">
+    <rect x="456" y="64" width="32" height="18"/><rect x="502" y="64" width="32" height="18"/>
+    <rect x="456" y="110" width="32" height="18"/><rect x="502" y="110" width="32" height="18"/>
+    <rect x="456" y="156" width="32" height="18"/><rect x="502" y="156" width="32" height="18"/>
+    <rect x="456" y="202" width="32" height="18"/><rect x="502" y="202" width="32" height="18"/>
+    <rect x="456" y="248" width="32" height="18"/><rect x="502" y="248" width="32" height="18"/>
+    <rect x="456" y="294" width="32" height="18"/><rect x="502" y="294" width="32" height="18"/>
+    <rect x="456" y="340" width="32" height="18"/><rect x="502" y="340" width="32" height="18"/>
+  </g>
+  <text x="40" y="404" fill="#FFFFFF" font-size="12" letter-spacing="1">SCHEMATIC — NOT TO SCALE</text>
+</svg>
