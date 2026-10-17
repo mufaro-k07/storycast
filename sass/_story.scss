@@ -92,6 +92,26 @@
     max-inline-size: $measure;
   }
 
+  .story-video__player {
+    display: grid;
+    gap: $space-4;
+  }
+
+  .story-video__video {
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: 16 / 9;
+    background-color: $color-bg-dark;
+  }
+
+  .story-video__caption {
+    display: grid;
+    gap: $space-2;
+    max-inline-size: $measure;
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+  }
+
 // Chapters
   .race-chapter__inner {
     display: grid;
@@ -382,6 +402,8 @@
 
 // Transcript
   .story-transcript__content {
+    display: grid;
+    gap: $space-5;
     max-inline-size: $measure;
   }
 

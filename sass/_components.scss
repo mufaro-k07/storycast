@@ -205,40 +205,51 @@
     line-height: 0.9;
   }
 
-// Media placeholder
-  .media-placeholder {
+// Transcript
+  .transcript {
     display: grid;
-    align-content: center;
-    gap: $space-2;
-    padding: $space-5;
-    border: 2px dashed $color-border;
-    background-color: $color-bg-muted;
-    color: $color-text-primary;
+    gap: $space-3;
+    max-inline-size: $measure;
   }
 
-  .media-placeholder__status {
+  .transcript__heading {
+    font-size: $font-size-card-heading;
+  }
+
+  .transcript__note {
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+  }
+
+  .transcript__time {
+    display: inline-block;
+    min-inline-size: 3.5ch;
+    margin-inline-end: $space-2;
     color: var(--color-text-accent);
-    font-size: $font-size-eyebrow;
+    font-size: $font-size-small;
     font-weight: $font-weight-semibold;
-    letter-spacing: $letter-spacing-eyebrow;
-    line-height: $line-height-ui;
-    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
   }
 
-  .media-placeholder--video {
-    --color-text-accent: #{$color-text-accent-on-dark};
+  .transcript__scenes {
+    display: grid;
+    gap: $space-5;
+  }
 
-    aspect-ratio: 16 / 9;
-    justify-items: center;
-    padding: $space-layout-gap;
-    border-color: $color-mid-grey;
-    background-color: $color-bg-dark;
-    color: $color-text-inverse;
-    text-align: center;
+  .transcript__scene {
+    display: grid;
+    gap: $space-2;
+    padding-block-end: $space-5;
+    border-block-end: 1px solid $color-border-subtle;
+  }
 
-    > p {
-      max-inline-size: $measure;
-    }
+  .transcript__visual {
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+  }
+
+  .transcript__label {
+    font-weight: $font-weight-semibold;
   }
 
   // Status label: "In production", "Available now"

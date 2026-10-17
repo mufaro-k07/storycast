@@ -225,6 +225,31 @@
     gap: $space-3;
   }
 
+  .audio-feature__player {
+    display: grid;
+    gap: $space-6;
+  }
+
+  .audio-feature__figure {
+    display: grid;
+    gap: $space-3;
+    padding: $space-5;
+    border: 2px solid $color-border;
+  }
+
+  .audio-feature__caption {
+    font-weight: $font-weight-semibold;
+  }
+
+  .audio-feature__duration {
+    color: var(--color-text-muted);
+    font-weight: $font-weight-regular;
+  }
+
+  .audio-feature__audio {
+    inline-size: 100%;
+  }
+
 // Access formats
   .access-formats__grid {
     display: grid;

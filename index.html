@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>When Everything Goes Wrong | StoryCast</title>
     <meta name="description" content="StoryCast is an independent, accessible multimedia storytelling microsite. Featured story: the 2021 Hungarian Grand Prix, a race shaped by rain, first-lap chaos and an unexpected winner.">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Prata&display=swap">
@@ -103,10 +104,23 @@
                     <h2 id="audio-feature-title">The Race, in Your Ears</h2>
                     <p>A short original audio introduction to the extraordinary events of the 2021 Hungarian Grand Prix.</p>
                 </div>
-                <!-- Temporary media area: replace with <audio controls> and the transcript in Phase 5. -->
-                <div class="audio-feature__player media-placeholder">
-                    <p class="media-placeholder__status">Audio in production</p>
-                    <p>The narrated introduction is still being recorded, so there is nothing to play yet. It will appear here with standard playback controls and a full written transcript.</p>
+                <div class="audio-feature__player">
+                    <figure class="audio-feature__figure">
+                        <figcaption class="audio-feature__caption">Original audio introduction <span class="audio-feature__duration">(43 seconds)</span></figcaption>
+                        <audio class="audio-feature__audio" controls preload="metadata">
+                            <source src="assets/audio/race-introduction.wav" type="audio/wav">
+                            <p>Your browser cannot play this audio. <a href="assets/audio/race-introduction.wav">Download the audio introduction (WAV)</a>, or read the transcript below.</p>
+                        </audio>
+                    </figure>
+                    <section class="transcript" aria-labelledby="audio-transcript-title">
+                        <h3 class="transcript__heading" id="audio-transcript-title">Audio Transcript</h3>
+                        <p class="transcript__note">Narrated by a synthetic voice. There is no music or other sound.</p>
+                        <p><time class="transcript__time" datetime="PT0S">0:00</time> This is StoryCast. On the first of August, 2021, the Hungaroring hosted the Hungarian Grand Prix.</p>
+                        <p><time class="transcript__time" datetime="PT9S">0:09</time> Rain fell just before the start, and every car lined up on intermediate tyres. Moments after the start, a collision at the first corner took several cars out, and the race was stopped under a red flag.</p>
+                        <p><time class="transcript__time" datetime="PT22S">0:22</time> As the track dried, Lewis Hamilton lined up alone on the starting grid. Every other car started from the pit lane, on slick tyres.</p>
+                        <p><time class="transcript__time" datetime="PT32S">0:32</time> Out of the chaos, Esteban Ocon took the lead, held off the pressure, and won his first Formula 1 race. This is the story of the day everything went wrong.</p>
+                        <a class="text-link" href="assets/transcripts/audio-introduction-transcript.txt">Download the transcript (plain text)</a>
+                    </section>
                 </div>
             </div>
         </section>
@@ -122,19 +136,19 @@
                         <p class="access-card__number chapter-number" aria-hidden="true">01</p>
                         <h3 class="access-card__title">Watch</h3>
                         <p>Captioned video storytelling.</p>
-                        <p class="access-card__status status-label">In production</p>
+                        <p class="access-card__status status-label">Available now</p>
                     </li>
                     <li class="access-card">
                         <p class="access-card__number chapter-number" aria-hidden="true">02</p>
                         <h3 class="access-card__title">Listen</h3>
                         <p>Original audio with accessible playback controls.</p>
-                        <p class="access-card__status status-label">In production</p>
+                        <p class="access-card__status status-label">Available now</p>
                     </li>
                     <li class="access-card">
                         <p class="access-card__number chapter-number" aria-hidden="true">03</p>
                         <h3 class="access-card__title">Read</h3>
                         <p>Transcripts and diagrams that everyone can explore.</p>
-                        <p class="access-card__status status-label">In production</p>
+                        <p class="access-card__status status-label">Available now</p>
                     </li>
                 </ol>
                 <a class="access-formats__link text-link" href="about.html">About StoryCast Accessibility&nbsp;<span class="text-link__arrow" aria-hidden="true">&rarr;</span></a>
