@@ -159,6 +159,16 @@
     color: $color-button-secondary-text;
   }
 
+  .button--light {
+    background-color: $color-button-light-bg;
+    color: $color-button-light-text;
+  }
+
+  .button--light:hover {
+    background-color: $color-button-light-bg-hover;
+    color: $color-button-light-text;
+  }
+
   .text-link {
     display: inline-block;
     padding-block: $space-2;
@@ -231,6 +241,16 @@
     }
   }
 
+  // Status label: "In production", "Available now"
+  .status-label {
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    line-height: $line-height-ui;
+    text-transform: uppercase;
+  }
+
   .eyebrow {
     color: var(--color-text-accent);
     font-size: $font-size-eyebrow;
@@ -238,5 +258,20 @@
     letter-spacing: $letter-spacing-eyebrow;
     line-height: $line-height-ui;
     text-transform: uppercase;
+  }
+
+  // Eyebrow with a red rule, for dark surfaces where red text is too low contrast
+  .eyebrow--rule {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+  }
+
+  .eyebrow--rule::before {
+    content: "";
+    flex: none;
+    inline-size: $space-6;
+    block-size: 2px;
+    background-color: $color-accent;
   }
 }

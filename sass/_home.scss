@@ -1,4 +1,3 @@
-
 @use "tokens" as *;
 
 @layer components {
@@ -35,20 +34,6 @@
       padding-block: $space-10;
       padding-inline-end: $space-layout-gap;
     }
-  }
-
-  .hero__eyebrow {
-    display: flex;
-    align-items: center;
-    gap: $space-3;
-  }
-
-  .hero__eyebrow::before {
-    content: "";
-    flex: none;
-    inline-size: $space-6;
-    block-size: 2px;
-    background-color: $color-accent;
   }
 
   .hero__title {
@@ -274,11 +259,6 @@
   .access-card__status {
     margin-block-start: auto;
     padding-block-start: $space-4;
-    color: $color-text-secondary;
-    font-size: $font-size-small;
-    font-weight: $font-weight-semibold;
-    letter-spacing: $letter-spacing-eyebrow;
-    text-transform: uppercase;
   }
 
   .access-formats__link {

@@ -28,13 +28,127 @@
     </header>
 
     <main id="main-content">
-        <div class="section">
-            <div class="page-container flow">
-                <p class="eyebrow">About &amp; Access</p>
-                <h1>Every Great Story Deserves to Be Experienced.</h1>
-                <p>StoryCast creates accessible audio, video and written racing stories for curious audiences.</p>
+        <section class="about-hero section section--dark" aria-labelledby="about-title">
+            <div class="about-hero__inner page-container">
+                <div class="about-hero__content">
+                    <p class="eyebrow eyebrow--rule">About &amp; Access</p>
+                    <h1 class="about-hero__title" id="about-title">Every Great Story Deserves to Be Experienced.</h1>
+                    <p class="about-hero__description">StoryCast creates accessible audio, video and written racing stories for curious audiences.</p>
+                </div>
+                <div class="about-hero__art">
+                    <img class="about-hero__image" src="assets/images/track-line.svg" alt="" width="240" height="190">
+                </div>
+            </div>
+        </section>
+
+        <div class="about-mission section">
+            <div class="about-mission__grid page-container">
+                <section class="about-mission__item" aria-labelledby="mission-title">
+                    <p class="eyebrow">Our Mission</p>
+                    <h2 id="mission-title">Stories Beyond the Result.</h2>
+                    <p>StoryCast explores the moments behind extraordinary sporting events.</p>
+                    <p>Rather than presenting only results and statistics, we use storytelling to explain the decisions, challenges and experiences that make each moment memorable.</p>
+                    <p>Our aim is to create engaging narratives that people can watch, listen to and read.</p>
+                </section>
+                <section class="about-mission__item" aria-labelledby="why-title">
+                    <p class="eyebrow">Why This Race?</p>
+                    <h2 id="why-title">A Day Built for Explanation.</h2>
+                    <p>The 2021 Hungarian Grand Prix was shaped by changing weather, unexpected collisions and difficult strategy decisions.</p>
+                    <p>It provides an opportunity to explore how a single race can unfold through multiple perspectives and storytelling formats.</p>
+                </section>
             </div>
         </div>
+
+        <section class="accessibility-features section section--muted" aria-labelledby="features-title">
+            <div class="page-container">
+                <header class="section-header">
+                    <p class="eyebrow">Accessibility Features</p>
+                    <h2 id="features-title">Designed for Different Ways of Exploring.</h2>
+                    <p class="accessibility-features__intro">People experience digital stories differently. StoryCast is designed to provide meaningful alternatives to visual and audio content, while keeping navigation straightforward.</p>
+                </header>
+                <ul class="accessibility-features__grid" role="list">
+                    <li class="accessibility-card">
+                        <div class="accessibility-card__inner">
+                            <p class="accessibility-card__icon" aria-hidden="true">CC</p>
+                            <h3 class="accessibility-card__title">Captions</h3>
+                            <p class="accessibility-card__description">Synchronised captions will make spoken narration and important audio information available to visitors who cannot hear the video.</p>
+                            <p class="accessibility-card__status status-label">Arriving with the video explainer</p>
+                        </div>
+                    </li>
+                    <li class="accessibility-card">
+                        <div class="accessibility-card__inner">
+                            <p class="accessibility-card__icon" aria-hidden="true">TXT</p>
+                            <h3 class="accessibility-card__title">Transcripts</h3>
+                            <p class="accessibility-card__description">Written transcripts will provide an alternative way to follow audio and video stories, including important narrative details.</p>
+                            <p class="accessibility-card__status status-label">Arriving with the audio and video</p>
+                        </div>
+                    </li>
+                    <li class="accessibility-card">
+                        <div class="accessibility-card__inner">
+                            <p class="accessibility-card__icon" aria-hidden="true">TAB</p>
+                            <h3 class="accessibility-card__title">Keyboard Access</h3>
+                            <p class="accessibility-card__description">Navigation, links and interactive elements can be operated without a mouse.</p>
+                            <p class="accessibility-card__status status-label">Available now</p>
+                        </div>
+                    </li>
+                    <li class="accessibility-card">
+                        <div class="accessibility-card__inner">
+                            <p class="accessibility-card__icon" aria-hidden="true">AA</p>
+                            <h3 class="accessibility-card__title">Readable Design</h3>
+                            <p class="accessibility-card__description">Clear typography, structured headings, sufficient contrast and responsive layouts support comfortable reading.</p>
+                            <p class="accessibility-card__status status-label">Available now</p>
+                        </div>
+                    </li>
+                </ul>
+                <p class="accessibility-features__note">Diagrams in the story include written text alternatives, and the site respects reduced-motion settings. StoryCast describes its access features without claiming verified WCAG compliance.</p>
+            </div>
+        </section>
+
+        <section class="explore-guide section" aria-labelledby="explore-title">
+            <div class="page-container">
+                <header class="section-header">
+                    <p class="eyebrow">How to Explore</p>
+                    <h2 id="explore-title">Choose the Format That Works for You.</h2>
+                </header>
+                <ol class="explore-guide__grid" role="list">
+                    <li class="explore-guide__step">
+                        <p class="explore-guide__number chapter-number" aria-hidden="true">01</p>
+                        <h3 class="explore-guide__title">Video</h3>
+                        <p class="explore-guide__text">Watch the narrated race explainer using standard playback controls and captions.</p>
+                        <p class="explore-guide__status status-label">In production</p>
+                    </li>
+                    <li class="explore-guide__step">
+                        <p class="explore-guide__number chapter-number" aria-hidden="true">02</p>
+                        <h3 class="explore-guide__title">Audio</h3>
+                        <p class="explore-guide__text">Listen to the original race introduction using accessible audio controls.</p>
+                        <p class="explore-guide__status status-label">In production</p>
+                    </li>
+                    <li class="explore-guide__step">
+                        <p class="explore-guide__number chapter-number" aria-hidden="true">03</p>
+                        <h3 class="explore-guide__title">Transcript</h3>
+                        <p class="explore-guide__text">Read the written narration and descriptions of meaningful visual information.</p>
+                        <p class="explore-guide__status status-label">In production</p>
+                    </li>
+                    <li class="explore-guide__step">
+                        <p class="explore-guide__number chapter-number" aria-hidden="true">04</p>
+                        <h3 class="explore-guide__title">Timeline</h3>
+                        <p class="explore-guide__text">Explore the major race events using keyboard-accessible expandable sections.</p>
+                        <p class="explore-guide__status status-label">Available now</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="about-cta section" aria-labelledby="cta-title">
+            <div class="about-cta__content page-container">
+                <div class="about-cta__text">
+                    <p class="eyebrow">Ready to Start?</p>
+                    <h2 id="cta-title">Explore the Full Race Story.</h2>
+                    <p>Discover the extraordinary events of the 2021 Hungarian Grand Prix.</p>
+                </div>
+                <a class="about-cta__link button button--light" href="story/hungarian-grand-prix.html">Read the Hungarian Grand Prix Story</a>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">

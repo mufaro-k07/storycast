@@ -25,21 +25,24 @@ $color-bg-page: $color-white;
 $color-bg-light: $color-white;
 $color-bg-muted: $color-off-white;
 $color-bg-dark: $color-racing-black;
+$color-bg-accent: $color-racing-red;
 
-// Buttons (white label: 4.97:1 on red, 7.38:1 on dark red)
+// Buttons 
 $color-button-primary-bg: $color-racing-red;
 $color-button-primary-bg-hover: $color-dark-red;
 $color-button-primary-text: $color-white;
 $color-button-secondary-bg: $color-dark-red;
 $color-button-secondary-bg-hover: $color-racing-red;
 $color-button-secondary-text: $color-white;
+$color-button-light-bg: $color-white;
+$color-button-light-bg-hover: $color-off-white;
+$color-button-light-text: $color-racing-black;
 
 // Borders and accents
 $color-border: $color-racing-black;
 $color-border-subtle: $color-mid-grey;
 $color-border-on-dark: $color-graphite;
 $color-accent: $color-racing-red;
-// Racing red as text only at large sizes (4.97:1 white, 4.52:1 off-white)
 $color-text-large-accent: $color-racing-red;
 $color-decorative-number: $color-mid-grey;
 $color-decorative-number-on-dark: $color-graphite;
