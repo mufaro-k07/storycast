@@ -30,29 +30,15 @@
 
     <main id="main-content">
         <article class="story">
-            <header class="story-intro">
+            <header class="story-intro section--dark">
                 <div class="story-intro__inner page-container">
                     <div class="story-intro__heading">
-                        <p class="eyebrow">StoryCast Original / 001</p>
+                        <p class="eyebrow eyebrow--rule">StoryCast Original / 001</p>
                         <h1 class="story-intro__title">When Everything Goes Wrong.</h1>
                         <p class="story-intro__subtitle">The 2021 Hungarian Grand Prix.</p>
                     </div>
                     <div class="story-intro__details">
-                        <dl class="story-intro__metadata">
-                            <div class="story-intro__meta-item">
-                                <dt>Date</dt>
-                                <dd><time datetime="2021-08-01">1 August 2021</time></dd>
-                            </div>
-                            <div class="story-intro__meta-item">
-                                <dt>Location</dt>
-                                <dd>Hungaroring, Hungary</dd>
-                            </div>
-                            <div class="story-intro__meta-item">
-                                <dt>Race distance</dt>
-                                <dd>70 laps</dd>
-                            </div>
-                        </dl>
-                        <p>A wet start, a multi-car collision and the strangest restart of the season transformed the Hungarian Grand Prix.</p>
+                        <p class="story-intro__standfirst">A wet start, a multi-car collision and the strangest restart of the season transformed the Hungarian Grand Prix.</p>
                         <p>What followed was a race of strategy, unexpected opportunities and an unlikely winner.</p>
                         <nav class="story-intro__jump" aria-label="On this page">
                             <ul class="story-intro__jump-list" role="list">
@@ -61,20 +47,54 @@
                                 <li><a class="text-link" href="#transcript">Read the Transcript&nbsp;<span class="text-link__arrow" aria-hidden="true">&darr;</span></a></li>
                             </ul>
                         </nav>
-                        <img class="story-intro__track" src="../assets/images/track-line.svg" alt="" width="240" height="190">
                     </div>
                 </div>
-                <div class="story-intro__art page-container">
+                <div class="story-intro__art">
                     <img class="story-intro__art-image" src="../assets/images/story-hero.svg" alt="" width="1280" height="620">
+                    <img class="story-intro__track" src="../assets/images/track-line.svg" alt="" width="240" height="190">
+                </div>
+                <div class="story-intro__data page-container">
+                    <dl class="story-intro__metadata stat-list">
+                        <div class="stat">
+                            <dt class="stat__label">Date</dt>
+                            <dd class="stat__value"><time datetime="2021-08-01">1 August 2021</time></dd>
+                        </div>
+                        <div class="stat">
+                            <dt class="stat__label">Location</dt>
+                            <dd class="stat__value">Hungaroring, Hungary</dd>
+                        </div>
+                        <div class="stat">
+                            <dt class="stat__label">Race distance</dt>
+                            <dd class="stat__value">70 laps</dd>
+                        </div>
+                    </dl>
+                    <nav class="chapter-nav" aria-label="Chapters">
+                        <ol class="chapter-nav__list" role="list">
+                            <li><a class="chapter-nav__link" href="#setup"><span class="chapter-nav__number">01</span> It Started with Rain</a></li>
+                            <li><a class="chapter-nav__link" href="#chaos"><span class="chapter-nav__number">02</span> Then Everything Went Wrong</a></li>
+                            <li><a class="chapter-nav__link" href="#restart"><span class="chapter-nav__number">03</span> A Starting Grid of One</a></li>
+                            <li><a class="chapter-nav__link" href="#fight"><span class="chapter-nav__number">04</span> An Unlikely Leader</a></li>
+                            <li><a class="chapter-nav__link" href="#result"><span class="chapter-nav__number">05</span> Against All Expectations</a></li>
+                        </ol>
+                    </nav>
                 </div>
             </header>
 
             <section class="story-video section section--muted" id="video" aria-labelledby="video-title">
                 <div class="page-container">
-                    <header class="section-header">
-                        <p class="eyebrow">Original Explainer</p>
-                        <h2 id="video-title">Watch the Race Unfold</h2>
-                        <p class="story-video__description">Experience the defining moments of the 2021 Hungarian Grand Prix through an original narrated race explainer.</p>
+                    <header class="story-video__header">
+                        <div class="story-video__heading">
+                            <p class="eyebrow">Original Explainer</p>
+                            <h2 class="story-video__title" id="video-title">Watch the Race Unfold</h2>
+                        </div>
+                        <div class="story-video__intro">
+                            <p class="story-video__description">Experience the defining moments of the 2021 Hungarian Grand Prix through an original narrated race explainer.</p>
+                            <ul class="chip-list" role="list" aria-label="Video features">
+                                <li class="chip">1:30</li>
+                                <li class="chip">English captions</li>
+                                <li class="chip">Full transcript</li>
+                            </ul>
+                        </div>
                     </header>
                     <figure class="story-video__player">
                         <video class="story-video__video" controls preload="metadata" playsinline width="1280" height="720" poster="../assets/images/race-explainer-poster.jpg">
@@ -90,102 +110,232 @@
                 </div>
             </section>
 
-            <section class="race-chapter section" id="setup" aria-labelledby="setup-title">
+            <section class="race-chapter race-chapter--rain section" id="setup" aria-labelledby="setup-title">
                 <div class="race-chapter__inner page-container">
-                    <p class="race-chapter__number chapter-number" aria-hidden="true">01</p>
+                    <header class="race-chapter__header">
+                        <p class="race-chapter__number chapter-number" aria-hidden="true">01</p>
+                        <div class="race-chapter__titles">
+                            <p class="race-chapter__kicker eyebrow">Before the start</p>
+                            <h2 class="race-chapter__heading" id="setup-title"><span class="visually-hidden">Chapter 1: </span>It Started with Rain.</h2>
+                        </div>
+                    </header>
                     <div class="race-chapter__content">
-                        <h2 class="race-chapter__heading" id="setup-title"><span class="visually-hidden">Chapter 1: </span>It Started with Rain.</h2>
-                        <p>The Hungaroring is a tight, twisting circuit near Budapest where overtaking is notoriously difficult, so starting position matters. Lewis Hamilton had taken pole position for Mercedes, with his team-mate Valtteri Bottas alongside him on the front row.</p>
+                        <p class="race-chapter__lede">The Hungaroring is a tight, twisting circuit near Budapest where overtaking is notoriously difficult, so starting position matters. Lewis Hamilton had taken pole position for Mercedes, with his team-mate Valtteri Bottas alongside him on the front row.</p>
                         <p>Then the rain arrived. Showers fell just before the start, and every driver lined up on intermediate tyres, which are designed for a wet but not flooded track.</p>
                         <p>On a damp surface, grip is unpredictable and braking distances grow longer. The run from the grid to Turn 1 ends in a heavy braking zone, with twenty cars arriving at once. Brake a fraction too late and there is very little room to recover.</p>
                     </div>
-                    <figure class="race-chapter__media">
-                        <img src="../assets/images/wet-front-row.svg" alt="Schematic of a wet starting grid: the car in pole position, marked P1, and the car marked P2 beside it, both facing the run to Turn 1." width="600" height="400" loading="lazy">
-                        <figcaption>Schematic illustration, not to scale. Hamilton started from pole (P1) with Bottas alongside (P2), on a track wet from the rain.</figcaption>
-                    </figure>
+                    <div class="race-chapter__aside">
+                        <figure class="race-chapter__media">
+                            <img src="../assets/images/wet-front-row.svg" alt="Schematic of a wet starting grid: the car in pole position, marked P1, and the car marked P2 beside it, both facing the run to Turn 1." width="600" height="400" loading="lazy">
+                            <figcaption>Schematic illustration, not to scale. Hamilton started from pole (P1) with Bottas alongside (P2), on a track wet from the rain.</figcaption>
+                        </figure>
+                        <dl class="race-chapter__stats stat-list">
+                            <div class="stat">
+                                <dt class="stat__label">Cars arriving at Turn 1</dt>
+                                <dd class="stat__value">20</dd>
+                            </div>
+                            <div class="stat">
+                                <dt class="stat__label">Tyre on every car</dt>
+                                <dd class="stat__value">Inters</dd>
+                            </div>
+                        </dl>
+                    </div>
                 </div>
             </section>
 
-            <section class="race-chapter section section--muted" id="chaos" aria-labelledby="chaos-title">
+            <section class="race-chapter race-chapter--impact section section--muted" id="chaos" aria-labelledby="chaos-title">
                 <div class="race-chapter__inner page-container">
-                    <p class="race-chapter__number chapter-number" aria-hidden="true">02</p>
+                    <header class="race-chapter__header">
+                        <p class="race-chapter__number chapter-number" aria-hidden="true">02</p>
+                        <div class="race-chapter__titles">
+                            <p class="race-chapter__kicker eyebrow">Lap 1, Turn 1</p>
+                            <h2 class="race-chapter__heading" id="chaos-title"><span class="visually-hidden">Chapter 2: </span>Then Everything Went Wrong.</h2>
+                        </div>
+                    </header>
                     <div class="race-chapter__content">
-                        <h2 class="race-chapter__heading" id="chaos-title"><span class="visually-hidden">Chapter 2: </span>Then Everything Went Wrong.</h2>
-                        <p>Hamilton got away cleanly. Behind him, the pack funnelled towards the first corner, and Bottas misjudged his braking and ran into the back of Lando Norris's McLaren.</p>
+                        <p class="race-chapter__lede">Hamilton got away cleanly. Behind him, the pack funnelled towards the first corner, and Bottas misjudged his braking and ran into the back of Lando Norris's McLaren.</p>
                         <p>The impact pushed Norris into Max Verstappen's Red Bull. Bottas's Mercedes then slid on into Sergio Pérez, ending the Red Bull driver's race on the spot. Verstappen was able to continue, but with heavy damage to his car.</p>
                         <p>Further back, a separate incident unfolded. Lance Stroll braked late, ran onto the grass and hit Charles Leclerc's Ferrari, which was then pushed into Daniel Ricciardo, sending the McLaren spinning.</p>
                         <p>With debris across the circuit, the safety car was deployed. After two laps, the race was suspended under a red flag.</p>
                     </div>
-                    <figure class="race-chapter__media">
-                        <img src="../assets/images/turn-one-incident.svg" alt="Schematic of the first-corner incidents. Arrows show Bottas (BOT) hitting Norris (NOR), Norris being pushed into Verstappen (VER), and Bottas hitting Pérez (PER). Further back, an arrow shows Stroll (STR) hitting Leclerc (LEC)." width="640" height="420" loading="lazy">
-                        <figcaption>Schematic illustration of the Turn 1 incidents. Positions are simplified and do not reconstruct exact car positions.</figcaption>
-                    </figure>
+                    <div class="race-chapter__aside">
+                        <figure class="race-chapter__media">
+                            <img src="../assets/images/turn-one-incident.svg" alt="Schematic of the first-corner incidents. Arrows show Bottas (BOT) hitting Norris (NOR), Norris being pushed into Verstappen (VER), and Bottas hitting Pérez (PER). Further back, an arrow shows Stroll (STR) hitting Leclerc (LEC)." width="640" height="420" loading="lazy">
+                            <figcaption>Schematic illustration of the Turn 1 incidents. Positions are simplified and do not reconstruct exact car positions.</figcaption>
+                        </figure>
+                    </div>
+                    <section class="chapter-footage" aria-labelledby="turn-one-footage-title">
+                        <div class="chapter-footage__header">
+                            <h3 class="chapter-footage__title statement" id="turn-one-footage-title">The Moment That <span class="statement__accent">Changed Everything.</span></h3>
+                            <p class="chapter-footage__intro">Watch the dramatic opening-lap collision that reshaped the 2021 Hungarian Grand Prix.</p>
+                        </div>
+                        <div class="official-video">
+                            <div class="official-video__layout">
+                                <a class="official-video__frame" href="https://www.youtube.com/watch?v=8DuTjXo67ac" tabindex="-1" aria-hidden="true">
+                                    <img class="official-video__thumb" src="https://i.ytimg.com/vi/8DuTjXo67ac/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy">
+                                    <span class="official-video__play"></span>
+                                </a>
+                                <div class="official-video__info">
+                                    <p class="official-video__source">Official Formula 1 video / YouTube / 1:10</p>
+                                    <p>Formula 1's own clip of the first-lap collisions at Turn 1, the incidents described in this chapter.</p>
+                                    <p class="official-video__note">Opens on YouTube: this Formula 1 clip would not play when embedded in our tests. YouTube offers automatically generated English captions only; this chapter's text and diagram cover the same events.</p>
+                                    <a class="official-video__link text-link" href="https://www.youtube.com/watch?v=8DuTjXo67ac">Watch the Official Turn 1 Footage on YouTube&nbsp;<span class="text-link__arrow" aria-hidden="true">&rarr;</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
 
             <section class="race-chapter race-chapter--feature section section--dark" id="restart" aria-labelledby="restart-title">
                 <div class="race-chapter__inner page-container">
-                    <p class="race-chapter__number chapter-number" aria-hidden="true">03</p>
+                    <header class="race-chapter__header">
+                        <p class="race-chapter__number chapter-number" aria-hidden="true">03</p>
+                        <div class="race-chapter__titles">
+                            <p class="race-chapter__kicker eyebrow eyebrow--rule">The restart</p>
+                            <h2 class="race-chapter__heading" id="restart-title"><span class="visually-hidden">Chapter 3: </span>A Starting Grid of One.</h2>
+                        </div>
+                    </header>
                     <div class="race-chapter__content">
-                        <h2 class="race-chapter__heading" id="restart-title"><span class="visually-hidden">Chapter 3: </span>A Starting Grid of One.</h2>
-                        <p>During the red flag, the rain held off and the track began to dry.</p>
+                        <p class="race-chapter__lede">During the red flag, the rain held off and the track began to dry.</p>
                         <p>Mercedes kept Hamilton on intermediate tyres. Every other team made the opposite call: at the end of the formation lap, all the cars behind Hamilton drove into the pit lane for slick, dry-weather tyres.</p>
                         <p>The result was one of the strangest sights in modern Formula 1. Hamilton lined up for the restart alone, the only car on the starting grid, while the rest of the field started from the pit lane.</p>
                         <p>He soon had to pit for slicks too, and he rejoined far down the order. The tyre decisions made in those few minutes reshaped the entire race.</p>
                     </div>
-                    <figure class="race-chapter__media">
-                        <img src="../assets/images/lone-restart-grid.svg" alt="Schematic of the restart: a single red car, number 44, alone in pole position on an otherwise empty starting grid, while the other cars queue in the pit lane alongside." width="580" height="420" loading="lazy">
-                        <figcaption>Schematic illustration, not to scale. Hamilton's car (number 44) was the only one on the grid; every other car started from the pit lane on slick tyres.</figcaption>
-                    </figure>
+                    <div class="race-chapter__aside">
+                        <dl class="race-chapter__stats race-chapter__stats--stacked stat-list">
+                            <div class="stat">
+                                <dt class="stat__label">Car on the starting grid</dt>
+                                <dd class="stat__value">1</dd>
+                            </div>
+                            <div class="stat">
+                                <dt class="stat__label">Cars starting from the pit lane</dt>
+                                <dd class="stat__value">14</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <section class="chapter-footage chapter-footage--split" aria-labelledby="restart-footage-title">
+                        <div class="chapter-footage__header">
+                            <h3 class="chapter-footage__title statement statement--display" id="restart-footage-title">One car. One grid. <span class="statement__accent">One extraordinary moment.</span></h3>
+                        </div>
+                        <div class="chapter-footage__step">
+                            <p class="step-label"><span class="step-label__number">01</span> Explore the diagram</p>
+                            <figure class="race-chapter__media">
+                                <img src="../assets/images/lone-restart-grid.svg" alt="Schematic of the restart: a single red car, number 44, alone in pole position on an otherwise empty starting grid, while the other cars queue in the pit lane alongside." width="580" height="420" loading="lazy">
+                                <figcaption>Schematic illustration, not to scale. Hamilton's car (number 44) was the only one on the grid; every other car started from the pit lane on slick tyres.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="chapter-footage__step">
+                            <p class="step-label"><span class="step-label__number">02</span> Watch the footage</p>
+                            <div class="official-video">
+                                <div class="official-video__layout">
+                                    <a class="official-video__frame" href="https://www.youtube.com/watch?v=5GfseCOTOHM" tabindex="-1" aria-hidden="true">
+                                        <img class="official-video__thumb" src="https://i.ytimg.com/vi/5GfseCOTOHM/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy">
+                                        <span class="official-video__play"></span>
+                                    </a>
+                                    <div class="official-video__info">
+                                        <p class="official-video__source">Official Formula 1 video / YouTube / 1:05</p>
+                                        <p>Formula 1's own clip of the restart, when Hamilton lined up alone on the grid and the rest of the field started from the pit lane.</p>
+                                        <p class="official-video__note">Opens on YouTube: this Formula 1 clip would not play when embedded in our tests. YouTube offers automatically generated English captions only; the diagram and chapter text describe the same moment.</p>
+                                        <a class="official-video__link text-link" href="https://www.youtube.com/watch?v=5GfseCOTOHM">Watch Hamilton's Unusual Restart on YouTube&nbsp;<span class="text-link__arrow" aria-hidden="true">&rarr;</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
 
-            <section class="race-chapter section section--muted" id="fight" aria-labelledby="fight-title">
+            <section class="race-chapter race-chapter--profiles section" id="fight" aria-labelledby="fight-title">
                 <div class="race-chapter__inner page-container">
-                    <p class="race-chapter__number chapter-number" aria-hidden="true">04</p>
+                    <header class="race-chapter__header">
+                        <p class="race-chapter__number chapter-number" aria-hidden="true">04</p>
+                        <div class="race-chapter__titles">
+                            <p class="race-chapter__kicker eyebrow">The fight for the lead</p>
+                            <h2 class="race-chapter__heading" id="fight-title"><span class="visually-hidden">Chapter 4: </span>An Unlikely Leader.</h2>
+                        </div>
+                    </header>
                     <div class="race-chapter__content">
-                        <h2 class="race-chapter__heading" id="fight-title"><span class="visually-hidden">Chapter 4: </span>An Unlikely Leader.</h2>
-                        <p>When Hamilton pitted, the lead passed to Esteban Ocon. He had started eighth but had avoided the chaos at Turn 1, and his Alpine now led the race. Sebastian Vettel's Aston Martin followed closely behind.</p>
+                        <p class="race-chapter__lede">When Hamilton pitted, the lead passed to Esteban Ocon. He had started eighth but had avoided the chaos at Turn 1, and his Alpine now led the race. Sebastian Vettel's Aston Martin followed closely behind.</p>
                         <p>Hamilton began working his way back through the field, but his recovery stalled behind Ocon's team-mate, Fernando Alonso. The two-time world champion defended hard for around ten laps, and every lap Hamilton spent behind him was a lap he could not use to close on the leaders.</p>
                         <p>Up front, Ocon stayed calm under sustained pressure from Vettel and kept the lead.</p>
                     </div>
-                    <div class="race-chapter__media">
+                    <div class="race-chapter__aside">
                         <ul class="driver-list" role="list" aria-label="Key drivers in the fight for the lead">
-                            <li class="driver-list__item">
+                            <li class="driver-list__item driver-list__item--leader">
+                                <p class="driver-list__role-tag" aria-hidden="true">Leader</p>
                                 <p class="driver-list__name">Esteban Ocon</p>
                                 <p class="driver-list__team">Alpine</p>
                                 <p class="driver-list__role">Led the race after the restart</p>
                             </li>
                             <li class="driver-list__item">
+                                <p class="driver-list__role-tag" aria-hidden="true">Chaser</p>
                                 <p class="driver-list__name">Sebastian Vettel</p>
                                 <p class="driver-list__team">Aston Martin</p>
                                 <p class="driver-list__role">Chased Ocon for the win</p>
                             </li>
                             <li class="driver-list__item">
+                                <p class="driver-list__role-tag" aria-hidden="true">Defender</p>
                                 <p class="driver-list__name">Fernando Alonso</p>
                                 <p class="driver-list__team">Alpine</p>
                                 <p class="driver-list__role">Held Hamilton back</p>
                             </li>
                             <li class="driver-list__item">
+                                <p class="driver-list__role-tag" aria-hidden="true">Recovery</p>
                                 <p class="driver-list__name">Lewis Hamilton</p>
                                 <p class="driver-list__team">Mercedes</p>
                                 <p class="driver-list__role">Recovered through the field</p>
                             </li>
                         </ul>
+                        <dl class="race-chapter__stats stat-list">
+                            <div class="stat">
+                                <dt class="stat__label">Ocon's starting position</dt>
+                                <dd class="stat__value">P8</dd>
+                            </div>
+                            <div class="stat">
+                                <dt class="stat__label">Laps Alonso held Hamilton back (approx.)</dt>
+                                <dd class="stat__value">~10</dd>
+                            </div>
+                        </dl>
                     </div>
                 </div>
             </section>
 
-            <section class="race-chapter section" id="result" aria-labelledby="result-title">
+            <section class="race-chapter race-chapter--finale section" id="result" aria-labelledby="result-title">
                 <div class="race-chapter__inner page-container">
-                    <p class="race-chapter__number chapter-number" aria-hidden="true">05</p>
+                    <header class="race-chapter__header">
+                        <p class="race-chapter__number chapter-number" aria-hidden="true">05</p>
+                        <div class="race-chapter__titles">
+                            <p class="race-chapter__kicker eyebrow">Lap 70 and after</p>
+                            <h2 class="race-chapter__heading" id="result-title"><span class="visually-hidden">Chapter 5: </span>Against All Expectations.</h2>
+                        </div>
+                    </header>
                     <div class="race-chapter__content">
-                        <h2 class="race-chapter__heading" id="result-title"><span class="visually-hidden">Chapter 5: </span>Against All Expectations.</h2>
-                        <p>Ocon held on to win. It was his first Formula 1 Grand Prix victory.</p>
+                        <p class="race-chapter__lede">Ocon held on to win. It was his first Formula 1 Grand Prix victory.</p>
                         <p>Vettel crossed the line second, with Hamilton third. After the race, however, officials could not obtain the required fuel sample from Vettel's car, and he was disqualified.</p>
                         <p>Hamilton was promoted to second in the official classification, and Carlos Sainz moved up to third.</p>
                     </div>
-                    <div class="race-chapter__media race-results">
+                    <div class="race-chapter__aside race-results">
+                        <div class="race-results__group race-results__group--official">
+                            <h3 class="race-results__heading">Official podium</h3>
+                            <ol class="race-results__podium" role="list">
+                                <li class="race-results__step race-results__step--first">
+                                    <span class="race-results__position"><span class="visually-hidden">First: </span><span aria-hidden="true">P1</span></span>
+                                    <span class="race-results__driver">Esteban Ocon</span>
+                                    <span class="race-results__team">Alpine</span>
+                                </li>
+                                <li class="race-results__step race-results__step--second">
+                                    <span class="race-results__position"><span class="visually-hidden">Second: </span><span aria-hidden="true">P2</span></span>
+                                    <span class="race-results__driver">Lewis Hamilton</span>
+                                    <span class="race-results__team">Mercedes</span>
+                                </li>
+                                <li class="race-results__step race-results__step--third">
+                                    <span class="race-results__position"><span class="visually-hidden">Third: </span><span aria-hidden="true">P3</span></span>
+                                    <span class="race-results__driver">Carlos Sainz</span>
+                                    <span class="race-results__team">Ferrari</span>
+                                </li>
+                            </ol>
+                        </div>
                         <div class="race-results__group">
                             <h3 class="race-results__heading">Order across the line</h3>
                             <ol class="race-results__list">
@@ -193,20 +343,33 @@
                                 <li>Sebastian Vettel, Aston Martin <span class="race-results__note">(later disqualified)</span></li>
                                 <li>Lewis Hamilton, Mercedes</li>
                             </ol>
-                        </div>
-                        <div class="race-results__group race-results__group--official">
-                            <h3 class="race-results__heading">Official podium</h3>
-                            <ol class="race-results__list">
-                                <li>Esteban Ocon, Alpine</li>
-                                <li>Lewis Hamilton, Mercedes</li>
-                                <li>Carlos Sainz, Ferrari</li>
-                            </ol>
+                            <p class="race-results__explainer">Vettel finished second on the road but was disqualified after the race, because officials could not obtain the required fuel sample from his car. The official classification is the result that stands.</p>
                         </div>
                     </div>
+                    <section class="chapter-footage" aria-labelledby="victory-footage-title">
+                        <div class="chapter-footage__header">
+                            <h3 class="chapter-footage__title statement statement--display" id="victory-footage-title">Against <span class="statement__accent">all odds.</span></h3>
+                            <p class="chapter-footage__intro">After 70 laps of extraordinary racing, Esteban Ocon claimed his first Formula 1 victory.</p>
+                        </div>
+                        <div class="official-video">
+                            <div class="official-video__layout">
+                                <a class="official-video__frame" href="https://www.youtube.com/watch?v=mvpws9p_Dvg" tabindex="-1" aria-hidden="true">
+                                    <img class="official-video__thumb" src="https://i.ytimg.com/vi/mvpws9p_Dvg/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy">
+                                    <span class="official-video__play"></span>
+                                </a>
+                                <div class="official-video__info">
+                                    <p class="official-video__source">Official Formula 1 video / YouTube / 0:42</p>
+                                    <p>Formula 1's own clip of Esteban Ocon's maiden Grand Prix win for Alpine, published on race day. Vettel's disqualification came after the race, so any result in the clip may show the order on the road.</p>
+                                    <p class="official-video__note">Opens on YouTube: this Formula 1 clip would not play when embedded in our tests. YouTube offers automatically generated English captions only; the official result is listed above.</p>
+                                    <a class="official-video__link text-link" href="https://www.youtube.com/watch?v=mvpws9p_Dvg">Watch Ocon's Maiden Victory on YouTube&nbsp;<span class="text-link__arrow" aria-hidden="true">&rarr;</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
 
-            <div class="pull-quote section section--muted">
+            <div class="pull-quote section section--accent">
                 <figure class="pull-quote__figure page-container">
                     <p class="pull-quote__text">&ldquo;One moment can change an entire race.&rdquo;</p>
                     <figcaption class="pull-quote__caption">Editorial statement by StoryCast</figcaption>
@@ -346,22 +509,50 @@
                 </div>
             </section>
 
-            <section class="related section section--muted" aria-labelledby="related-title">
+            <section class="full-picture section section--muted" id="highlights" aria-labelledby="highlights-title">
+                <div class="full-picture__inner page-container">
+                    <header class="full-picture__header">
+                        <p class="eyebrow">The Full Picture</p>
+                        <h2 class="full-picture__title" id="highlights-title">Experience the Race Highlights.</h2>
+                        <p>Seven minutes of official race highlights from Formula 1, for further viewing once you have followed the story.</p>
+                        <p class="full-picture__note">This is supplementary external content. For a captioned, fully transcribed account of the race, watch <a href="#video">our original explainer</a>.</p>
+                    </header>
+                    <div class="official-video">
+                        <div class="official-video__layout">
+                            <a class="official-video__frame" href="https://www.youtube.com/watch?v=a2kkuQS_gXk" tabindex="-1" aria-hidden="true">
+                                <img class="official-video__thumb" src="https://i.ytimg.com/vi/a2kkuQS_gXk/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy">
+                                <span class="official-video__play"></span>
+                            </a>
+                            <div class="official-video__info">
+                                <p class="official-video__source">Official Formula 1 video / YouTube / 7:18</p>
+                                <p>Formula 1's highlights of the whole race, from the wet start to the chequered flag.</p>
+                                <p class="official-video__note">Opens on YouTube: this Formula 1 video would not play when embedded in our tests. YouTube lists English captions for it; the chapters and timeline on this page cover the same race.</p>
+                                <a class="official-video__link text-link" href="https://www.youtube.com/watch?v=a2kkuQS_gXk">Watch Official Race Highlights on YouTube&nbsp;<span class="text-link__arrow" aria-hidden="true">&rarr;</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="related section" aria-labelledby="related-title">
                 <div class="page-container">
                     <header class="section-header">
                         <p class="eyebrow">More from StoryCast</p>
-                        <h2 id="related-title">Continue Exploring.</h2>
+                        <h2 class="related__title" id="related-title">Continue Exploring.</h2>
                     </header>
                     <ul class="related__list" role="list">
                         <li class="related__item">
+                            <p class="related__number" aria-hidden="true">A</p>
                             <a class="related__link" href="../index.html">StoryCast homepage</a>
                             <p>Return to the featured story and the three defining moments.</p>
                         </li>
                         <li class="related__item">
+                            <p class="related__number" aria-hidden="true">B</p>
                             <a class="related__link" href="../index.html#listen">The audio introduction</a>
                             <p>Find the short narrated introduction on the homepage.</p>
                         </li>
                         <li class="related__item">
+                            <p class="related__number" aria-hidden="true">C</p>
                             <a class="related__link" href="../about.html">About &amp; Access</a>
                             <p>Learn how StoryCast is designed to be watched, heard and read.</p>
                         </li>

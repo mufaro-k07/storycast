@@ -1,0 +1,31 @@
+@use "colors" as *;
+
+// Surfaces: switch the colour custom properties so links, labels and focus rings stay readable
+
+// Racing black
+@mixin surface-dark {
+  --color-link: #{$color-link-on-dark};
+  --color-link-hover: #{$color-link-on-dark};
+  --color-text-accent: #{$color-text-accent-on-dark};
+  --color-focus: #{$color-focus-on-dark};
+  --color-decorative-number: #{$color-decorative-number-on-dark};
+  --color-text-muted: #{$color-text-muted-on-dark};
+  --color-rule: #{$color-border-on-dark};
+
+  background-color: $color-bg-dark;
+  color: $color-text-inverse;
+}
+
+// Racing red: white text is 4.97:1, so every small text colour becomes white
+@mixin surface-accent {
+  --color-link: #{$color-white};
+  --color-link-hover: #{$color-white};
+  --color-text-accent: #{$color-white};
+  --color-focus: #{$color-white};
+  --color-decorative-number: #{$color-dark-red};
+  --color-text-muted: #{$color-white};
+  --color-rule: #{$color-white};
+
+  background-color: $color-bg-accent;
+  color: $color-text-inverse;
+}

@@ -30,15 +30,11 @@
   }
 
   .section--dark {
-    --color-link: #{$color-link-on-dark};
-    --color-link-hover: #{$color-link-on-dark};
-    --color-text-accent: #{$color-text-accent-on-dark};
-    --color-focus: #{$color-focus-on-dark};
-    --color-decorative-number: #{$color-decorative-number-on-dark};
-    --color-text-muted: #{$color-text-muted-on-dark};
+    @include surface-dark;
+  }
 
-    background-color: $color-bg-dark;
-    color: $color-text-inverse;
+  .section--accent {
+    @include surface-accent;
   }
 
   .site-header__inner {

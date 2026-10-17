@@ -3,7 +3,7 @@
 @layer components {
 // Story intro
   .story-intro {
-    padding-block: $space-section;
+    padding-block-start: $space-section;
   }
 
   .story-intro__inner {
@@ -11,22 +11,26 @@
     gap: $space-6;
 
     @include from("lg") {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      align-items: end;
       gap: $space-layout-gap;
     }
   }
 
   .story-intro__title {
-    margin-block-start: $space-4;
+    margin-block-start: $space-5;
     font-size: $font-size-hero;
-    line-height: $line-height-tight;
+    letter-spacing: -0.01em;
+    line-height: 1;
   }
 
   .story-intro__subtitle {
-    margin-block-start: $space-4;
-    font-family: $font-display;
-    font-size: $font-size-card-heading;
+    margin-block-start: $space-5;
+    font-size: fluid(18, 22);
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.04em;
     line-height: $line-height-heading;
+    text-transform: uppercase;
   }
 
   .story-intro__details {
@@ -36,24 +40,9 @@
     max-inline-size: $measure;
   }
 
-  .story-intro__metadata {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $space-3 $space-6;
-    padding-block-end: $space-4;
-    border-block-end: 1px solid $color-border-subtle;
-  }
-
-  .story-intro__meta-item dt {
-    color: var(--color-text-muted);
-    font-size: $font-size-small;
-    font-weight: $font-weight-semibold;
-    letter-spacing: $letter-spacing-eyebrow;
-    text-transform: uppercase;
-  }
-
-  .story-intro__meta-item dd {
-    font-weight: $font-weight-semibold;
+  .story-intro__standfirst {
+    font-size: $font-size-lede;
+    line-height: $line-height-ui;
   }
 
   .story-intro__jump-list {
@@ -62,18 +51,9 @@
     column-gap: $space-5;
   }
 
-  .story-intro__track {
-    display: none;
-
-    @include from("lg") {
-      display: block;
-      inline-size: rem(160);
-      margin-inline-start: auto;
-    }
-  }
-
   .story-intro__art {
-    margin-block-start: $space-layout-gap;
+    position: relative;
+    margin-block-start: $space-8;
   }
 
   .story-intro__art-image {
@@ -83,25 +63,113 @@
     object-position: 58% 60%;
 
     @include from("md") {
-      aspect-ratio: auto;
+      aspect-ratio: 16 / 6;
     }
   }
 
+  .story-intro__track {
+    display: none;
+
+    @include from("lg") {
+      position: absolute;
+      inset-block-start: $space-6;
+      inset-inline-start: $gutter;
+      display: block;
+      inline-size: rem(180);
+    }
+  }
+
+  .story-intro__data {
+    display: grid;
+    gap: $space-8;
+    padding-block: $space-7 $space-section;
+  }
+
+  .story-intro__metadata .stat__value {
+    font-size: fluid(24, 40);
+  }
+
+// Chapter navigation
+  .chapter-nav__list {
+    display: grid;
+    border-block-start: 1px solid var(--color-rule);
+
+    @include from("md") {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    }
+  }
+
+  .chapter-nav__link {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+    block-size: 100%;
+    min-block-size: $target-min-size;
+    padding: $space-4 $space-4 $space-4 0;
+    border-block-end: 1px solid var(--color-rule);
+    color: var(--color-link);
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-ui;
+    text-decoration: none;
+  }
+
+  .chapter-nav__link:hover {
+    text-decoration: underline;
+    text-decoration-color: $color-accent;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.3em;
+  }
+
+  .chapter-nav__number {
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+    letter-spacing: $letter-spacing-eyebrow;
+  }
+
 // Video
+  .story-video__header {
+    display: grid;
+    gap: $space-5;
+    margin-block-end: $space-7;
+
+    @include from("lg") {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      align-items: end;
+      gap: $space-layout-gap;
+    }
+  }
+
+  .story-video__heading {
+    display: grid;
+    gap: $space-3;
+  }
+
+  .story-video__title {
+    font-size: fluid(32, 60);
+    line-height: $line-height-tight;
+  }
+
+  .story-video__intro {
+    display: grid;
+    gap: $space-4;
+  }
+
   .story-video__description {
     max-inline-size: $measure;
   }
 
   .story-video__player {
     display: grid;
-    gap: $space-4;
+    gap: $space-5;
   }
 
+  // Offset red block behind the player
   .story-video__video {
     inline-size: 100%;
     block-size: auto;
     aspect-ratio: 16 / 9;
     background-color: $color-bg-dark;
+    box-shadow: $space-3 $space-3 0 $color-accent;
   }
 
   .story-video__caption {
@@ -115,17 +183,43 @@
 // Chapters
   .race-chapter__inner {
     display: grid;
-    gap: $space-5;
+    gap: $space-6;
 
     @include from("lg") {
-      grid-template-columns: rem(208) minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       align-items: start;
-      column-gap: $space-layout-gap;
+      gap: $space-8 $space-layout-gap;
+    }
+  }
+
+  // Number above the title on small screens, beside it from md
+  .race-chapter__header {
+    display: grid;
+    gap: $space-4 $space-5;
+
+    @include from("md") {
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: end;
+    }
+
+    @include from("lg") {
+      grid-column: 1 / -1;
     }
   }
 
   .race-chapter__number {
     white-space: nowrap;
+    line-height: 0.8;
+  }
+
+  .race-chapter__titles {
+    display: grid;
+    gap: $space-2;
+  }
+
+  .race-chapter__heading {
+    font-size: fluid(30, 72);
+    line-height: 1.05;
   }
 
   .race-chapter__content {
@@ -134,12 +228,14 @@
     max-inline-size: $measure;
   }
 
-  .race-chapter__media {
-    margin-block-start: $space-3;
+  .race-chapter__lede {
+    font-size: $font-size-lede;
+    line-height: $line-height-ui;
+  }
 
-    @include from("lg") {
-      margin-block-start: 0;
-    }
+  .race-chapter__aside {
+    display: grid;
+    gap: $space-6;
   }
 
   .race-chapter__media img {
@@ -152,18 +248,96 @@
     font-size: $font-size-small;
   }
 
-  // Chapter 03: the restart gets a wider illustration and a red rule
-  .race-chapter--feature {
-    border-block-start: 6px solid $color-accent;
+  .race-chapter__stats {
+    padding-block-start: $space-4;
+    border-block-start: 2px solid var(--color-rule);
+  }
 
-    .race-chapter__inner {
-      @include from("lg") {
-        grid-template-columns: rem(208) minmax(0, 4fr) minmax(0, 6fr);
-      }
+  .race-chapter__stats--stacked {
+    flex-direction: column;
+    border-block-start: 0;
+  }
+
+  .race-chapter__stats--stacked .stat__value {
+    font-size: fluid(72, 160);
+  }
+
+  // Chapter 01: faint diagonal rain behind the text (decorative)
+  .race-chapter--rain {
+    background-image: repeating-linear-gradient(
+      105deg,
+      transparent 0 rem(22),
+      rgba($color-graphite, 0.07) rem(22) rem(23)
+    );
+  }
+
+  // Chapter 02: diagram first on wide screens
+  .race-chapter--impact .race-chapter__aside {
+    @include from("lg") {
+      grid-column: 1;
+      grid-row: 2;
     }
   }
 
-// Driver list (chapter 04)
+  // Chapter 03: the strongest section, with a red rule and oversized numbers
+  .race-chapter--feature {
+    border-block-start: 6px solid $color-accent;
+  }
+
+  .race-chapter--feature .race-chapter__heading {
+    font-size: fluid(36, 88);
+  }
+
+  .race-chapter--feature .stat:first-child .stat__value {
+    color: $color-text-large-accent;
+  }
+
+  // Embedded footage block inside a chapter
+  .chapter-footage {
+    display: grid;
+    gap: $space-6;
+    padding-block-start: $space-7;
+    border-block-start: 2px solid var(--color-rule);
+
+    @include from("lg") {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .chapter-footage__header {
+    display: grid;
+    gap: $space-4;
+
+    @include from("lg") {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      align-items: end;
+      column-gap: $space-layout-gap;
+    }
+  }
+
+  .chapter-footage__intro {
+    max-inline-size: 40ch;
+    font-size: $font-size-lede;
+    line-height: $line-height-ui;
+  }
+
+  // Chapter 03: diagram and footage side by side
+  .chapter-footage--split {
+    @include from("lg") {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: start;
+      column-gap: $space-layout-gap;
+    }
+  }
+
+  .chapter-footage--split .chapter-footage__header {
+    @include from("lg") {
+      grid-column: 1 / -1;
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+// Driver profiles (chapter 04)
   .driver-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
@@ -171,9 +345,28 @@
   }
 
   .driver-list__item {
-    padding: $space-4 $space-5;
-    border-inline-start: 4px solid $color-accent;
-    background-color: $color-bg-light;
+    display: grid;
+    align-content: start;
+    gap: $space-1;
+    padding: $space-5;
+    border-block-start: 6px solid $color-border;
+    background-color: $color-bg-muted;
+  }
+
+  .driver-list__item--leader {
+    @include surface-dark;
+
+    border-block-start-color: $color-accent;
+  }
+
+  .driver-list__role-tag {
+    margin-block-end: $space-3;
+    color: var(--color-text-accent);
+    font-size: fluid(26, 36);
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-display;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   .driver-list__name {
@@ -183,7 +376,6 @@
   }
 
   .driver-list__team {
-    margin-block-start: $space-1;
     color: var(--color-text-muted);
     font-size: $font-size-small;
     font-weight: $font-weight-semibold;
@@ -198,7 +390,6 @@
 // Results (chapter 05)
   .race-results {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
     gap: $space-5;
   }
 
@@ -208,12 +399,82 @@
   }
 
   .race-results__group--official {
+    container: podium / inline-size;
     border: 2px solid $color-border;
     border-block-start: 6px solid $color-accent;
   }
 
   .race-results__heading {
-    margin-block-end: $space-3;
+    margin-block-end: $space-4;
+  }
+
+  .race-results__podium {
+    display: grid;
+    gap: $space-2;
+  }
+
+  .race-results__step {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: $space-1;
+    min-inline-size: 0;
+    padding: $space-4;
+    border-block-start: 4px solid $color-border;
+    background-color: $color-bg-muted;
+  }
+
+  .race-results__step--first {
+    @include surface-accent;
+
+    border-block-start-color: $color-border;
+  }
+
+  .race-results__position {
+    font-size: fluid(32, 56);
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-display;
+    line-height: 1;
+  }
+
+  .race-results__driver {
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-ui;
+  }
+
+  .race-results__team {
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    text-transform: uppercase;
+  }
+
+  // Podium steps: 2nd, 1st, 3rd from left; the list itself stays in order
+  @container podium (min-width: 30rem) {
+    .race-results__podium {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: end;
+    }
+
+    .race-results__step {
+      grid-row: 1;
+    }
+
+    .race-results__step--first {
+      grid-column: 2;
+      min-block-size: rem(240);
+    }
+
+    .race-results__step--second {
+      grid-column: 1;
+      min-block-size: rem(190);
+    }
+
+    .race-results__step--third {
+      grid-column: 3;
+      min-block-size: rem(150);
+    }
   }
 
   .race-results__list {
@@ -240,20 +501,25 @@
     font-size: $font-size-small;
   }
 
-// Pull quote
+  .race-results__explainer {
+    margin-block-start: $space-4;
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+  }
+
+// Pull quote (red band)
   .pull-quote__figure {
     display: grid;
     gap: $space-5;
   }
 
   .pull-quote__text {
-    max-inline-size: 20ch;
+    max-inline-size: 18ch;
     padding-inline-start: $space-6;
-    border-inline-start: 10px solid $color-accent;
-    color: $color-text-large-accent;
+    border-inline-start: 10px solid $color-white;
     font-family: $font-display;
-    font-size: $font-size-feature-heading;
-    line-height: $line-height-heading;
+    font-size: fluid(34, 80);
+    line-height: $line-height-tight;
     text-wrap: balance;
   }
 
@@ -407,7 +673,41 @@
     max-inline-size: $measure;
   }
 
+
+// Full picture: official highlights, kept smaller than the original explainer
+  .full-picture__inner {
+    display: grid;
+    gap: $space-6;
+
+    @include from("lg") {
+      grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+      align-items: start;
+      gap: $space-layout-gap;
+    }
+  }
+
+  .full-picture__header {
+    display: grid;
+    gap: $space-3;
+  }
+
+  .full-picture__title {
+    font-size: fluid(28, 48);
+    line-height: $line-height-tight;
+  }
+
+  .full-picture__note {
+    padding-inline-start: $space-4;
+    border-inline-start: 4px solid $color-accent;
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+  }
+
 // Related
+  .related__title {
+    font-size: fluid(32, 60);
+  }
+
   .related__list {
     display: grid;
     gap: $space-card-gap;
@@ -421,13 +721,20 @@
     display: grid;
     align-content: start;
     gap: $space-2;
-    padding: $space-card-padding;
-    background-color: $color-bg-light;
+    padding-block-start: $space-4;
+    border-block-start: 2px solid $color-border;
+  }
+
+  .related__number {
+    color: var(--color-text-accent);
+    font-size: $font-size-eyebrow;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-eyebrow;
   }
 
   .related__link {
     font-family: $font-display;
-    font-size: $font-size-card-heading;
+    font-size: fluid(24, 32);
     line-height: $line-height-heading;
   }
 }

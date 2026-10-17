@@ -1,7 +1,9 @@
 @use "tokens" as *;
 
 @layer components {
+// Hero
   .hero {
+    position: relative;
     display: grid;
     grid-template-columns:
       [full-start] minmax($gutter, 1fr)
@@ -9,76 +11,59 @@
       [content-end] minmax($gutter, 1fr)
       [full-end];
     row-gap: $space-7;
-    padding-block: $space-section;
+    padding-block-end: $space-section;
+    overflow: clip;
 
+    // 12 columns between the gutters: lines 2 to 14
     @include from("lg") {
       grid-template-columns:
         [full-start] minmax($gutter, 1fr)
-        [content-start] minmax(0, calc($content-max-width / 2))
-        [split] minmax(0, calc($content-max-width / 2))
+        [content-start] repeat(12, minmax(0, calc($content-max-width / 12)))
         [content-end] minmax($gutter, 1fr)
         [full-end];
-      padding-block: 0;
+      row-gap: $space-8;
+      padding-block-start: $space-9;
     }
   }
 
-  .hero__content {
-    grid-column: content;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    @include from("lg") {
-      grid-column: content-start / split;
-      align-self: center;
-      padding-block: $space-10;
-      padding-inline-end: $space-layout-gap;
-    }
-  }
-
-  .hero__title {
-    margin-block-start: $space-5;
-    font-size: $font-size-hero;
-    line-height: $line-height-tight;
-  }
-
-  .hero__subtitle {
-    margin-block-start: $space-6;
-    font-family: $font-display;
-    font-size: $font-size-card-heading;
-    line-height: $line-height-heading;
-  }
-
-  .hero__intro {
-    max-inline-size: $measure;
-    margin-block-start: $space-4;
-  }
-
-  .hero__actions {
-    display: flex;
-    flex-direction: column;
-    gap: $space-4;
-    align-self: stretch;
-    margin-block-start: $space-7;
-
-    @include from("md") {
-      flex-flow: row wrap;
-      align-self: flex-start;
-    }
+  // Decorative outlined word behind the hero
+  .hero__ghost {
+    position: absolute;
+    inset-block-end: -0.12em;
+    inset-inline-end: -0.04em;
+    color: transparent;
+    font-size: clamp(rem(96), 22vw, rem(360));
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-display;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    -webkit-text-stroke: 1px $color-graphite;
   }
 
   .hero__illustration {
-    grid-column: content;
-    aspect-ratio: 4 / 3;
-
-    @include from("md") {
-      aspect-ratio: 16 / 9;
-    }
+    position: relative;
+    grid-column: full;
+    aspect-ratio: 16 / 9;
 
     @include from("lg") {
-      position: relative;
-      grid-column: split / full-end;
+      grid-column: 7 / full-end;
+      grid-row: 1;
       aspect-ratio: auto;
+      min-block-size: rem(520);
+    }
+  }
+
+  // Fades the artwork into the background where the title overlaps it
+  .hero__illustration::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(0deg, $color-bg-dark, transparent 45%);
+
+    @include from("lg") {
+      background-image: linear-gradient(90deg, $color-bg-dark 25%, rgba($color-bg-dark, 0.75) 50%, transparent 80%);
     }
   }
 
@@ -94,6 +79,75 @@
     }
   }
 
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    grid-column: content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include from("lg") {
+      grid-column: 2 / 12;
+      grid-row: 1;
+      align-self: center;
+    }
+  }
+
+  .hero__title {
+    max-inline-size: 12ch;
+    margin-block-start: $space-5;
+    font-size: $font-size-hero;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+
+  .hero__lede {
+    max-inline-size: rem(560);
+    margin-block-start: $space-6;
+
+    @include from("lg") {
+      margin-inline-start: min(30%, rem(280));
+      padding-inline-start: $space-5;
+      border-inline-start: 4px solid $color-accent;
+    }
+  }
+
+  .hero__subtitle {
+    font-size: fluid(18, 22);
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.04em;
+    line-height: $line-height-heading;
+    text-transform: uppercase;
+  }
+
+  .hero__intro {
+    max-inline-size: $measure;
+    margin-block-start: $space-3;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+    margin-block-start: $space-6;
+
+    @include from("md") {
+      flex-flow: row wrap;
+    }
+  }
+
+  .hero__facts {
+    position: relative;
+    grid-column: content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    gap: $space-5;
+    padding-block-start: $space-5;
+    border-block-start: 1px solid $color-border-on-dark;
+  }
+
+// Featured story
   .featured-story__container {
     container: featured-story / inline-size;
   }
@@ -113,7 +167,8 @@
 
   .featured-story__title {
     margin-block-start: $space-3;
-    font-size: $font-size-feature-heading;
+    font-size: fluid(32, 64);
+    line-height: $line-height-tight;
   }
 
   .featured-story__meta {
@@ -127,6 +182,7 @@
   }
 
   .featured-story__media {
+    position: relative;
     grid-area: media;
   }
 
@@ -134,13 +190,48 @@
     inline-size: 100%;
   }
 
+  // Issue number tab on the image (decorative)
+  .featured-story__issue {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    padding: $space-2 $space-4;
+    background-color: $color-accent;
+    color: $color-white;
+    font-size: fluid(28, 48);
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-display;
+    line-height: 1;
+  }
+
   .featured-story__body {
     grid-area: body;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: $space-4;
+    gap: $space-5;
     max-inline-size: $measure;
+  }
+
+  .featured-story__lede {
+    font-size: $font-size-lede;
+    line-height: $line-height-ui;
+  }
+
+  // Drop cap at 3.4em counts as large text: racing red is 4.97:1 on white
+  .featured-story__lede::first-letter {
+    float: left;
+    margin-inline-end: $space-2;
+    color: $color-text-large-accent;
+    font-family: $font-display;
+    font-size: 3.4em;
+    line-height: 0.85;
+  }
+
+  .featured-story__stats {
+    align-self: stretch;
+    padding-block: $space-4;
+    border-block: 2px solid $color-border;
   }
 
   @container featured-story (min-width: 48rem) {
@@ -162,79 +253,222 @@
     }
   }
 
+  // Wide: the headline panel overlaps the image, like a magazine spread
+  @container featured-story (min-width: 64rem) {
+    .featured-story__card {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      column-gap: 0;
+    }
+
+    .featured-story__media {
+      align-self: stretch;
+    }
+
+    .featured-story__image {
+      block-size: 100%;
+      object-fit: cover;
+    }
+
+    .featured-story__header {
+      position: relative;
+      z-index: 1;
+      margin-inline-start: calc(-1 * $space-10);
+      padding: $space-6 0 $space-6 $space-6;
+      background-color: $color-bg-page;
+    }
+
+    .featured-story__body {
+      padding-inline-start: $space-6;
+    }
+  }
+
+// Three defining moments
+  .race-moments__title {
+    max-inline-size: 18ch;
+    font-size: fluid(32, 60);
+    line-height: $line-height-tight;
+  }
+
   .race-moments__grid {
     display: grid;
+    gap: $space-5;
+
+    @include from("md") {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
     @include from("lg") {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: $space-layout-gap;
-      padding-block-start: $space-6;
-      border-block-start: 2px solid $color-border;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
     }
   }
 
   .moment-card {
-    display: grid;
-    grid-template-columns: min($space-10, 30vw) minmax(0, 1fr);
-    align-content: start;
-    column-gap: $space-4;
-    padding-block: $space-6;
-    border-block-end: 1px solid $color-border-subtle;
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    background-color: $color-bg-light;
+  }
+
+  .moment-card--chaos {
+    @include from("md") {
+      grid-column: 1 / -1;
+    }
 
     @include from("lg") {
-      grid-template-columns: minmax(0, 1fr);
-      padding-block: 0;
-      border-block-end: 0;
+      grid-column: 1 / 8;
+      grid-row: 1 / 3;
     }
+  }
+
+  .moment-card--restart {
+    @include surface-dark;
+
+    @include from("lg") {
+      grid-column: 8 / 13;
+    }
+  }
+
+  .moment-card--victory {
+    @include surface-accent;
+
+    @include from("lg") {
+      grid-column: 8 / 13;
+    }
+  }
+
+  .moment-card__image {
+    inline-size: 100%;
+  }
+
+  // The diagram's own background fills the extra height of the tall card
+  .moment-card--chaos .moment-card__media {
+    display: grid;
+    flex: 1;
+    align-items: center;
+    background-color: $color-bg-muted;
+  }
+
+  .moment-card--restart .moment-card__image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .moment-card__body {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-content: start;
+    align-items: baseline;
+    gap: $space-3;
+    padding: $space-5 $space-5 $space-6;
+
+    @include from("lg") {
+      padding: $space-6;
+    }
+  }
+
+  .moment-card__body > :nth-child(n + 3) {
+    grid-column: 1 / -1;
+  }
+
+  .moment-card__number,
+  .moment-card__title {
+    font-family: $font-body;
+    font-size: fluid(24, 36);
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-display;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   .moment-card__number {
-    grid-row: span 3;
-    font-size: min($font-size-chapter-compact, 22vw);
+    color: var(--color-text-accent);
+  }
 
-    @include from("lg") {
-      grid-row: auto;
-      font-size: $font-size-chapter;
-      margin-block-end: $space-4;
-    }
+  .moment-card--chaos .moment-card__number,
+  .moment-card--chaos .moment-card__title {
+    font-size: fluid(28, 56);
   }
 
   .moment-card__text {
-    margin-block-start: $space-2;
+    max-inline-size: 48ch;
   }
 
   .moment-card__link {
     justify-self: start;
-    margin-block-start: $space-2;
   }
 
-  // Audio 
-  .audio-feature__inner {
-    display: grid;
-    gap: $space-6;
+  // Oversized "P1" on the victory card (decorative)
+  .moment-card__mark {
+    padding: $space-5 $space-5 0;
+    color: var(--color-decorative-number);
+    font-size: fluid(120, 200);
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.04em;
+    line-height: 0.8;
 
     @include from("lg") {
-      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-      align-items: start;
+      padding: $space-6 $space-6 0;
+    }
+  }
+
+// Audio
+  .audio-feature__inner {
+    display: grid;
+    gap: $space-7;
+
+    @include from("lg") {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
       gap: $space-layout-gap;
     }
   }
 
   .audio-feature__content {
-    display: grid;
-    gap: $space-3;
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+  }
+
+  .audio-feature__title {
+    font-size: fluid(32, 60);
+    line-height: $line-height-tight;
+  }
+
+  // Outlined "On air" (decorative)
+  .audio-feature__ghost {
+    display: none;
+
+    @include from("lg") {
+      display: block;
+      margin-block-start: auto;
+      color: transparent;
+      font-size: fluid(96, 168);
+      font-weight: $font-weight-bold;
+      letter-spacing: $letter-spacing-display;
+      line-height: 0.85;
+      text-transform: uppercase;
+      -webkit-text-stroke: 1px $color-graphite;
+    }
   }
 
   .audio-feature__player {
     display: grid;
-    gap: $space-6;
+    gap: $space-7;
   }
 
   .audio-feature__figure {
     display: grid;
-    gap: $space-3;
+    gap: $space-4;
     padding: $space-5;
-    border: 2px solid $color-border;
+    border: 2px solid $color-graphite;
+
+    @include from("md") {
+      padding: $space-6;
+    }
+  }
+
+  .audio-feature__wave {
+    inline-size: 100%;
+    block-size: fluid(56, 96);
   }
 
   .audio-feature__caption {
@@ -250,40 +484,85 @@
     inline-size: 100%;
   }
 
-// Access formats
+  .audio-feature__transcript {
+    padding-inline-start: $space-5;
+    border-inline-start: 2px solid $color-accent;
+  }
+
+// Access formats: Watch / Listen / Read
+  .access-formats__header {
+    @include from("lg") {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      align-items: end;
+      column-gap: $space-layout-gap;
+    }
+  }
+
+  .access-formats__header h2 {
+    font-size: fluid(32, 60);
+    line-height: $line-height-tight;
+
+    @include from("lg") {
+      grid-column: 1;
+    }
+  }
+
+  .access-formats__intro {
+    max-inline-size: 40ch;
+
+    @include from("lg") {
+      grid-column: 2;
+      grid-row: 1 / 3;
+    }
+  }
+
   .access-formats__grid {
     display: grid;
-    gap: $space-card-gap;
-
-    @include from("md") {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+    border-block-start: 2px solid $color-border;
   }
 
   .access-card {
-    display: flex;
-    flex-direction: column;
-    gap: $space-3;
-    padding: $space-card-padding;
-    background-color: $color-bg-light;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "number title"
+      "body body";
+    align-items: baseline;
+    gap: $space-3 $space-4;
+    padding-block: $space-6;
+    border-block-end: 1px solid $color-border-subtle;
 
-    @include from("lg") {
-      padding: $space-6;
+    @include from("md") {
+      grid-template-columns: rem(48) minmax(0, 6fr) minmax(0, 5fr);
+      grid-template-areas: "number title body";
+      align-items: center;
+      column-gap: $space-layout-gap;
     }
   }
 
-  .access-card__title {
-    margin-block-start: $space-3;
+  .access-card__number {
+    grid-area: number;
     color: var(--color-text-accent);
+    font-size: $font-size-eyebrow;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+  }
+
+  .access-card__title {
+    grid-area: title;
     font-family: $font-body;
-    font-size: $font-size-card-heading;
-    font-weight: $font-weight-medium;
+    font-size: $font-size-display;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-display;
+    line-height: 0.9;
     text-transform: uppercase;
   }
 
-  .access-card__status {
-    margin-block-start: auto;
-    padding-block-start: $space-4;
+  .access-card__body {
+    grid-area: body;
+    display: grid;
+    justify-items: start;
+    gap: $space-2;
   }
 
   .access-formats__link {

@@ -169,6 +169,18 @@
     color: $color-button-light-text;
   }
 
+  // Outline button for dark surfaces
+  .button--outline {
+    border-color: $color-white;
+    background-color: transparent;
+    color: $color-white;
+  }
+
+  .button--outline:hover {
+    background-color: $color-white;
+    color: $color-racing-black;
+  }
+
   .text-link {
     display: inline-block;
     padding-block: $space-2;

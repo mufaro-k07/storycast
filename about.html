@@ -30,6 +30,7 @@
 
     <main id="main-content">
         <section class="about-hero section section--dark" aria-labelledby="about-title">
+            <p class="about-hero__ghost" aria-hidden="true">Access</p>
             <div class="about-hero__inner page-container">
                 <div class="about-hero__content">
                     <p class="eyebrow eyebrow--rule">About &amp; Access</p>
@@ -42,33 +43,49 @@
             </div>
         </section>
 
+        <div class="about-statement section section--accent">
+            <div class="page-container">
+                <p class="about-statement__text statement statement--display">Good stories shouldn't have barriers.</p>
+            </div>
+        </div>
+
         <div class="about-mission section">
             <div class="about-mission__grid page-container">
-                <section class="about-mission__item" aria-labelledby="mission-title">
+                <section class="about-mission__item about-mission__item--mission" aria-labelledby="mission-title">
                     <p class="eyebrow">Our Mission</p>
-                    <h2 id="mission-title">Stories Beyond the Result.</h2>
-                    <p>StoryCast explores the moments behind extraordinary sporting events.</p>
+                    <h2 class="about-mission__title" id="mission-title">Stories Beyond the Result.</h2>
+                    <p class="about-mission__lede">StoryCast explores the moments behind extraordinary sporting events.</p>
                     <p>Rather than presenting only results and statistics, we use storytelling to explain the decisions, challenges and experiences that make each moment memorable.</p>
                     <p>Our aim is to create engaging narratives that people can watch, listen to and read.</p>
                 </section>
-                <section class="about-mission__item" aria-labelledby="why-title">
-                    <p class="eyebrow">Why This Race?</p>
-                    <h2 id="why-title">A Day Built for Explanation.</h2>
+                <section class="about-mission__item about-mission__item--why" aria-labelledby="why-title">
+                    <p class="eyebrow eyebrow--rule">Why This Race?</p>
+                    <h2 class="about-mission__title" id="why-title">A Day Built for Explanation.</h2>
                     <p>The 2021 Hungarian Grand Prix was shaped by changing weather, unexpected collisions and difficult strategy decisions.</p>
                     <p>It provides an opportunity to explore how a single race can unfold through multiple perspectives and storytelling formats.</p>
+                    <dl class="about-mission__stats stat-list">
+                        <div class="stat">
+                            <dt class="stat__label">Story chapters</dt>
+                            <dd class="stat__value">5</dd>
+                        </div>
+                        <div class="stat">
+                            <dt class="stat__label">Ways to follow it</dt>
+                            <dd class="stat__value">3</dd>
+                        </div>
+                    </dl>
                 </section>
             </div>
         </div>
 
         <section class="accessibility-features section section--muted" aria-labelledby="features-title">
             <div class="page-container">
-                <header class="section-header">
+                <header class="accessibility-features__header section-header">
                     <p class="eyebrow">Accessibility Features</p>
-                    <h2 id="features-title">Designed for Different Ways of Exploring.</h2>
+                    <h2 class="accessibility-features__title" id="features-title">Designed for Different Ways of Exploring.</h2>
                     <p class="accessibility-features__intro">People experience digital stories differently. StoryCast is designed to provide meaningful alternatives to visual and audio content, while keeping navigation straightforward.</p>
                 </header>
                 <ul class="accessibility-features__grid" role="list">
-                    <li class="accessibility-card">
+                    <li class="accessibility-card accessibility-card--dark">
                         <div class="accessibility-card__inner">
                             <p class="accessibility-card__icon" aria-hidden="true">CC</p>
                             <h3 class="accessibility-card__title">Captions</h3>
@@ -84,7 +101,7 @@
                             <p class="accessibility-card__status status-label">Available now</p>
                         </div>
                     </li>
-                    <li class="accessibility-card">
+                    <li class="accessibility-card accessibility-card--accent">
                         <div class="accessibility-card__inner">
                             <p class="accessibility-card__icon" aria-hidden="true">TAB</p>
                             <h3 class="accessibility-card__title">Keyboard Access</h3>
@@ -101,7 +118,10 @@
                         </div>
                     </li>
                 </ul>
-                <p class="accessibility-features__note">Diagrams in the story include written text alternatives, and the site respects reduced-motion settings. StoryCast describes its access features without claiming verified WCAG compliance.</p>
+                <div class="accessibility-features__notes">
+                    <p class="accessibility-features__note">Diagrams in the story include written text alternatives, and the site respects reduced-motion settings. StoryCast describes its access features without claiming verified WCAG compliance.</p>
+                    <p class="accessibility-features__note">The story also links to official Formula 1 clips on YouTube. They are external content: their captions are provided by YouTube and are mostly automatically generated. Each link has a written summary beside it, and our own explainer, captions and transcript cover the whole race.</p>
+                </div>
             </div>
         </section>
 
@@ -109,32 +129,36 @@
             <div class="page-container">
                 <header class="section-header">
                     <p class="eyebrow">How to Explore</p>
-                    <h2 id="explore-title">Choose the Format That Works for You.</h2>
+                    <h2 class="explore-guide__heading" id="explore-title">Choose the Format That Works for You.</h2>
                 </header>
                 <ol class="explore-guide__grid" role="list">
                     <li class="explore-guide__step">
-                        <p class="explore-guide__number chapter-number" aria-hidden="true">01</p>
+                        <p class="explore-guide__number" aria-hidden="true">01</p>
                         <h3 class="explore-guide__title">Video</h3>
                         <p class="explore-guide__text">Watch the narrated race explainer using standard playback controls and captions.</p>
                         <p class="explore-guide__status status-label">Available now</p>
+                        <a class="explore-guide__link text-link" href="story/hungarian-grand-prix.html#video">Watch the explainer&nbsp;<span class="text-link__arrow" aria-hidden="true">&rarr;</span></a>
                     </li>
                     <li class="explore-guide__step">
-                        <p class="explore-guide__number chapter-number" aria-hidden="true">02</p>
+                        <p class="explore-guide__number" aria-hidden="true">02</p>
                         <h3 class="explore-guide__title">Audio</h3>
                         <p class="explore-guide__text">Listen to the original race introduction using accessible audio controls.</p>
                         <p class="explore-guide__status status-label">Available now</p>
+                        <a class="explore-guide__link text-link" href="index.html#listen">Listen to the introduction&nbsp;<span class="text-link__arrow" aria-hidden="true">&rarr;</span></a>
                     </li>
                     <li class="explore-guide__step">
-                        <p class="explore-guide__number chapter-number" aria-hidden="true">03</p>
+                        <p class="explore-guide__number" aria-hidden="true">03</p>
                         <h3 class="explore-guide__title">Transcript</h3>
                         <p class="explore-guide__text">Read the written narration and descriptions of meaningful visual information.</p>
                         <p class="explore-guide__status status-label">Available now</p>
+                        <a class="explore-guide__link text-link" href="story/hungarian-grand-prix.html#transcript">Read the transcript&nbsp;<span class="text-link__arrow" aria-hidden="true">&rarr;</span></a>
                     </li>
                     <li class="explore-guide__step">
-                        <p class="explore-guide__number chapter-number" aria-hidden="true">04</p>
+                        <p class="explore-guide__number" aria-hidden="true">04</p>
                         <h3 class="explore-guide__title">Timeline</h3>
                         <p class="explore-guide__text">Explore the major race events using keyboard-accessible expandable sections.</p>
                         <p class="explore-guide__status status-label">Available now</p>
+                        <a class="explore-guide__link text-link" href="story/hungarian-grand-prix.html#timeline">Open the timeline&nbsp;<span class="text-link__arrow" aria-hidden="true">&rarr;</span></a>
                     </li>
                 </ol>
             </div>
@@ -144,7 +168,7 @@
             <div class="about-cta__content page-container">
                 <div class="about-cta__text">
                     <p class="eyebrow">Ready to Start?</p>
-                    <h2 id="cta-title">Explore the Full Race Story.</h2>
+                    <h2 class="about-cta__title" id="cta-title">Explore the Full Race Story.</h2>
                     <p>Discover the extraordinary events of the 2021 Hungarian Grand Prix.</p>
                 </div>
                 <a class="about-cta__link button button--light" href="story/hungarian-grand-prix.html">Read the Hungarian Grand Prix Story</a>
