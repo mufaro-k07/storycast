@@ -14,7 +14,6 @@ $font-size-hero: fluid(42, 104);
 $font-size-page-heading: fluid(36, 52);
 $font-size-section-heading: fluid(28, 36);
 $font-size-card-heading: fluid(22, 24);
-
 $font-size-feature-heading: fluid(28, 52);
 $font-size-body: fluid(16, 18);
 $font-size-nav: rem(16);
@@ -24,13 +23,13 @@ $font-size-chapter: fluid(90, 150);
 $font-size-chapter-compact: rem(72);
 
 // Editorial display sizes: oversized Poppins Bold statements and race statistics
-$font-size-display: fluid(40, 120);
-$font-size-statement: fluid(30, 64);
+$font-size-display: fluid(38, 96);
+$font-size-statement: fluid(28, 58);
 $font-size-stat: fluid(40, 76);
 $font-size-lede: fluid(19, 24);
 
 
-$line-height-display: 0.95;
+$line-height-display: 1.05;
 $line-height-tight: 1.1;
 $line-height-heading: 1.2;
 $line-height-ui: 1.5;

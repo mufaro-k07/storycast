@@ -1,26 +1,27 @@
 StoryCast: Watch the Race Unfold
-Transcript of the original narrated explainer (1:30)
-Narration: synthetic voice (Microsoft Hazel, Windows text-to-speech). No music or sound effects.
+Transcript of the original narrated explainer (1:52)
+Narrated by Mufaro, the creator of StoryCast. No music or sound effects.
 
 [0:00] [Visual: Title card over an original illustration of a red racing car on a dark, streaked track. Text reads: “When Everything Goes Wrong. The Hungarian Grand Prix, 1 August 2021, Hungaroring.”]
-Narrator: The Hungarian Grand Prix, the first of August, 2021.
+Narrator: Hungary, August 1st, 2021, a race nobody could have predicted.
 
-[0:06] [Visual: Schematic of the wet starting grid, captioned “Rain before the start”. A car marked P1 sits on pole with a car marked P2 beside it, rain streaks fall, and an arrow points ahead to Turn 1.]
-Narrator: Rain fell shortly before the start. Every car lined up on intermediate tyres, built for a wet track. Lewis Hamilton started from pole, with Valtteri Bottas alongside.
+[0:07] [Visual: Schematic of the wet starting grid, captioned “Rain before the start”. A car marked P1 sits on pole with a car marked P2 beside it, rain streaks fall, and an arrow points ahead to Turn 1.]
+Narrator: Rain has fallen at the Hungaroring. Lewis Hamilton starts on pole position with his Mercedes teammate Valtteri Bottas alongside him. But in these conditions, the first corner could change everything.
 
-[0:19] [Visual: Schematic of the first corner, captioned “Chaos at Turn 1”. Arrows show Bottas (BOT) hitting Norris (NOR), Norris pushed into Verstappen (VER) and Bottas hitting Pérez (PER). Further back, an arrow shows Stroll (STR) hitting Leclerc (LEC).]
-Narrator: On the run to Turn 1, Bottas braked too late. He hit Lando Norris, who was pushed into Max Verstappen. Bottas then slid into Sergio Pérez. Further back, Lance Stroll hit Charles Leclerc.
+[0:20] [Visual: Schematic of the first corner, captioned “Chaos at Turn 1”. Arrows show Bottas (BOT) hitting Norris (NOR), Norris pushed into Verstappen (VER) and Bottas hitting Pérez (PER). Further back, an arrow shows Stroll (STR) hitting Leclerc (LEC).]
+Narrator: And that's exactly what happens. Bottas brakes too late, crashing into Lando Norris, who is pushed into Max Verstappen. Sergio Pérez is also caught in the collision. Another incident involves Lance Stroll and Charles Leclerc. Within moments, the race has descended into chaos.
 
-[0:34] [Visual: A red flag card reading “Red flag”, with the line “Race stopped, track begins to dry”.]
-Narrator: After two laps behind the safety car, the race was stopped under a red flag. During the pause, the track began to dry.
+[0:40] [Visual: A red flag card reading “Red flag”, with the line “Race stopped, track begins to dry”.]
+Narrator: The race is stopped, but as the drivers wait, the rain eases and the circuit begins to dry. A crucial decision is approaching.
 
-[0:43] [Visual: Schematic of the restart, captioned “A starting grid of one”. A single red car numbered 44 sits alone on an empty starting grid while fourteen cars queue in the pit lane.]
-Narrator: Mercedes kept Hamilton on intermediate tyres. Every other car came into the pit lane for slick tyres. Hamilton took the restart alone, the only car on the starting grid.
+[0:49] [Visual: Schematic of the restart, captioned “A starting grid of one”. A single red car numbered 44 sits alone on an empty starting grid while fourteen cars queue in the pit lane.]
+Narrator: At the restart, every driver behind Lewis Hamilton heads into the pits for dry-weather tyres. Hamilton stays out, and when the lights go out, he's the only car on the starting grid. An extraordinary sight!
 
-[0:56] [Visual: Four driver cards, captioned “An unlikely leader”: Esteban Ocon, Alpine, leading; Sebastian Vettel, Aston Martin, chasing; Fernando Alonso, Alpine, defending; Lewis Hamilton, Mercedes, recovering.]
-Narrator: When Hamilton pitted for slicks, Esteban Ocon took the lead. Sebastian Vettel stayed close behind him. Fernando Alonso held Hamilton back for around ten laps.
+[1:05] [Visual: Four driver cards, captioned “An unlikely leader”: Esteban Ocon, Alpine, leading; Sebastian Vettel, Aston Martin, chasing; Fernando Alonso, Alpine, defending; Lewis Hamilton, Mercedes, recovering.]
+Narrator: Hamilton soon pits, dropping down the order. Esteban Ocon takes the lead, with Sebastian Vettel chasing him. Meanwhile, Fernando Alonso battles Hamilton, delaying his recovery and giving Ocon valuable breathing room.
 
-[1:09] [Visual: The official podium: 1st Esteban Ocon, Alpine; 2nd Lewis Hamilton, Mercedes; 3rd Carlos Sainz, Ferrari. A note reads: “Vettel finished second on the road but was disqualified after the race.”]
-Narrator: Ocon crossed the line first, for his first Formula 1 victory. Vettel finished second on the road, but was later disqualified. Officials could not obtain the required fuel sample from his car. The official podium: Ocon, Hamilton and Carlos Sainz.
+[1:21] [Visual: The official podium: 1st Esteban Ocon, Alpine; 2nd Lewis Hamilton, Mercedes; 3rd Carlos Sainz, Ferrari. A note reads: “Vettel finished second on the road but was disqualified after the race.”]
+Narrator: After 70 laps, Esteban Ocon crosses the finish line. He's done it! His first ever Formula 1 Grand Prix victory. Vettel finishes in second on the road, but is later disqualified. The official podium becomes Ocon, Hamilton and Carlos Sainz. A race that began in chaos ends with an unexpected champion.
 
-[1:27] [Visual: End card: “StoryCast. Independent, accessible multimedia racing stories. Independent educational project, not affiliated with Formula 1. Narration: synthetic voice.”]
+[1:45] [Visual: End card: “StoryCast. Independent, accessible multimedia racing stories. Narrated by Mufaro, the creator of StoryCast. Independent educational project, not affiliated with Formula 1.”]
+Narrator: Sometimes everything has to go wrong for history to be made.

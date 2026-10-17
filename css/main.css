@@ -266,6 +266,8 @@
     line-height: 1.5;
     text-decoration: none;
     text-underline-offset: 0.55em;
+    padding-inline: 0.75rem;
+    border-radius: 999px;
   }
   .site-header__link:hover {
     color: #15151e;
@@ -273,9 +275,8 @@
     text-decoration-thickness: 2px;
   }
   .site-header__link[aria-current=page] {
-    text-decoration: underline;
-    text-decoration-color: #e10600;
-    text-decoration-thickness: 4px;
+    background-color: #f4f4f4;
+    text-decoration: none;
   }
   .site-footer {
     --color-link: #ffffff;
@@ -323,6 +324,18 @@
   .site-footer__link[aria-current=page] {
     text-decoration-color: #e10600;
   }
+  .site-footer__maker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-footer__maker::before {
+    content: "";
+    flex: none;
+    inline-size: 0.75rem;
+    block-size: 0.75rem;
+    background-color: #e10600;
+  }
   .site-footer__bottom {
     margin-block-start: 3rem;
     padding-block-start: 1.5rem;
@@ -334,9 +347,10 @@
     justify-content: center;
     gap: 0.5rem;
     min-block-size: 2.75rem;
-    padding: 1rem 1.5rem;
-    border: 2px solid transparent;
-    border-radius: 0;
+    padding: 0.75rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
     font-family: "Poppins", "Segoe UI", Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -477,16 +491,16 @@
 @layer components {
   .statement {
     font-family: "Poppins", "Segoe UI", Arial, Helvetica, sans-serif;
-    font-size: clamp(1.875rem, 1.086rem + 3.238vw, 4rem);
+    font-size: clamp(1.75rem, 1.054rem + 2.857vw, 3.625rem);
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 0.95;
+    line-height: 1.05;
     text-transform: uppercase;
     text-wrap: balance;
     hyphens: auto;
   }
   .statement--display {
-    font-size: clamp(2.5rem, 0.643rem + 7.619vw, 7.5rem);
+    font-size: clamp(2.375rem, 1.029rem + 5.524vw, 6rem);
   }
   .statement__accent {
     color: #e10600;
@@ -545,7 +559,8 @@
   }
   .chip {
     padding: 0.25rem 0.75rem;
-    border: 2px solid var(--color-rule);
+    border: 1px solid var(--color-rule);
+    border-radius: 999px;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.5;
@@ -557,37 +572,13 @@
     display: grid;
     gap: 1.5rem;
   }
-  .official-video__frame {
-    position: relative;
-    display: block;
+  .official-video__video {
+    inline-size: 100%;
+    block-size: auto;
     aspect-ratio: 16/9;
-    overflow: hidden;
     background-color: #15151e;
     box-shadow: 0 0 0 1px #333333;
-  }
-  .official-video__thumb {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-  }
-  .official-video__play {
-    position: absolute;
-    inset-block-start: 50%;
-    inset-inline-start: 50%;
-    inline-size: clamp(3.5rem, 2.943rem + 2.286vw, 5rem);
-    translate: -50% -50%;
-    aspect-ratio: 1;
-    background-color: #e10600;
-  }
-  .official-video__play::after {
-    content: "";
-    position: absolute;
-    inset: 32% 30% 32% 38%;
-    background-color: #ffffff;
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-  }
-  .official-video__frame:hover .official-video__play {
-    background-color: #b00000;
+    border-radius: 1.5rem;
   }
   .official-video__info {
     display: grid;
@@ -786,6 +777,8 @@
   .featured-story__media {
     position: relative;
     grid-area: media;
+    border-radius: 1.5rem;
+    overflow: hidden;
   }
   .featured-story__image {
     inline-size: 100%;
@@ -888,6 +881,9 @@
     flex-direction: column;
     min-inline-size: 0;
     background-color: #ffffff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(21, 21, 30, 0.08);
   }
   @media (min-width: 48em) {
     .moment-card--chaos {
@@ -934,16 +930,21 @@
   }
   .moment-card__image {
     inline-size: 100%;
-  }
-  .moment-card--chaos .moment-card__media {
-    display: grid;
-    flex: 1;
-    align-items: center;
-    background-color: #f4f4f4;
-  }
-  .moment-card--restart .moment-card__image {
     aspect-ratio: 16/9;
     object-fit: cover;
+  }
+  .moment-card--chaos .moment-card__media {
+    position: relative;
+    flex: 1;
+    min-block-size: 15rem;
+  }
+  @media (min-width: 64em) {
+    .moment-card--chaos .moment-card__image {
+      position: absolute;
+      inset: 0;
+      block-size: 100%;
+      aspect-ratio: auto;
+    }
   }
   .moment-card__body {
     display: grid;
@@ -982,19 +983,6 @@
   }
   .moment-card__link {
     justify-self: start;
-  }
-  .moment-card__mark {
-    padding: 1.5rem 1.5rem 0;
-    color: var(--color-decorative-number);
-    font-size: clamp(7.5rem, 5.643rem + 7.619vw, 12.5rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.8;
-  }
-  @media (min-width: 64em) {
-    .moment-card__mark {
-      padding: 2rem 2rem 0;
-    }
   }
   .audio-feature__inner {
     display: grid;
@@ -1039,7 +1027,8 @@
     display: grid;
     gap: 1rem;
     padding: 1.5rem;
-    border: 2px solid #333333;
+    border: 1px solid #333333;
+    border-radius: 1.5rem;
   }
   @media (min-width: 48em) {
     .audio-feature__figure {
@@ -1120,7 +1109,7 @@
   .access-card__title {
     grid-area: title;
     font-family: "Poppins", "Segoe UI", Arial, Helvetica, sans-serif;
-    font-size: clamp(2.5rem, 0.643rem + 7.619vw, 7.5rem);
+    font-size: clamp(2.375rem, 1.029rem + 5.524vw, 6rem);
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 0.9;
@@ -1189,6 +1178,7 @@
     aspect-ratio: 4/3;
     object-fit: cover;
     object-position: 58% 60%;
+    border-radius: 1.5rem;
   }
   @media (min-width: 48em) {
     .story-intro__art-image {
@@ -1284,7 +1274,8 @@
     block-size: auto;
     aspect-ratio: 16/9;
     background-color: #15151e;
-    box-shadow: 0.75rem 0.75rem 0 #e10600;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 32px rgba(21, 21, 30, 0.16);
   }
   .story-video__caption {
     display: grid;
@@ -1346,11 +1337,40 @@
   }
   .race-chapter__media img {
     inline-size: 100%;
+    border-radius: 1.5rem;
   }
   .race-chapter__media figcaption {
     margin-block-start: 0.75rem;
     color: var(--color-text-muted);
     font-size: 0.875rem;
+  }
+  .race-chapter__photo img {
+    inline-size: 100%;
+    border-radius: 1.5rem;
+  }
+  .race-chapter__photo figcaption {
+    margin-block-start: 0.75rem;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+  .race-chapter__gallery {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (min-width: 48em) {
+    .race-chapter__gallery {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      align-items: start;
+    }
+  }
+  @media (min-width: 64em) {
+    .race-chapter__gallery {
+      grid-column: 1/-1;
+    }
+  }
+  .race-chapter__photo--wide img {
+    aspect-ratio: 16/10;
+    object-fit: cover;
   }
   .race-chapter__stats {
     padding-block-start: 1rem;
@@ -1431,7 +1451,8 @@
     align-content: start;
     gap: 0.25rem;
     padding: 1.5rem;
-    border-block-start: 6px solid #15151e;
+    border: 1px solid #c9c9c9;
+    border-radius: 1rem;
     background-color: #f4f4f4;
   }
   .driver-list__item--leader {
@@ -1444,7 +1465,7 @@
     --color-rule: #333333;
     background-color: #15151e;
     color: #ffffff;
-    border-block-start-color: #e10600;
+    border-color: #333333;
   }
   .driver-list__role-tag {
     margin-block-end: 0.75rem;
@@ -1477,11 +1498,12 @@
   .race-results__group {
     padding: 1.5rem;
     border: 1px solid #c9c9c9;
+    border-radius: 1.5rem;
   }
   .race-results__group--official {
     container: podium/inline-size;
     border: 2px solid #15151e;
-    border-block-start: 6px solid #e10600;
+    border-block-start: 3px solid #e10600;
   }
   .race-results__heading {
     margin-block-end: 1rem;
@@ -1497,8 +1519,9 @@
     gap: 0.25rem;
     min-inline-size: 0;
     padding: 1rem;
-    border-block-start: 4px solid #15151e;
+    border-block-start: 2px solid #15151e;
     background-color: #f4f4f4;
+    border-radius: 1rem;
   }
   .race-results__step--first {
     --color-link: #ffffff;
@@ -1864,6 +1887,7 @@
     background-color: #15151e;
     color: #ffffff;
     padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
   }
   @media (min-width: 48em) {
     .about-mission__item--why {
@@ -1917,6 +1941,7 @@
   .accessibility-card {
     container: accessibility-card/inline-size;
     background-color: #ffffff;
+    border-radius: 1.5rem;
   }
   @media (min-width: 64em) {
     .accessibility-card {
@@ -2024,7 +2049,7 @@
     justify-items: start;
     gap: 0.5rem;
     padding-block-start: 1.5rem;
-    border-block-start: 4px solid #15151e;
+    border-block-start: 2px solid #15151e;
   }
   .explore-guide__number {
     padding-inline: 0.5rem;
@@ -2033,6 +2058,8 @@
     font-size: 0.875rem;
     font-weight: 700;
     letter-spacing: 0.1em;
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
   }
   .explore-guide__title {
     margin-block-start: 0.5rem;

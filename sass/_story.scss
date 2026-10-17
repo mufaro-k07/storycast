@@ -61,6 +61,7 @@
     aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: 58% 60%;
+    border-radius: $radius-lg;
 
     @include from("md") {
       aspect-ratio: 16 / 6;
@@ -169,7 +170,8 @@
     block-size: auto;
     aspect-ratio: 16 / 9;
     background-color: $color-bg-dark;
-    box-shadow: $space-3 $space-3 0 $color-accent;
+    border-radius: $radius-lg;
+    box-shadow: 0 12px 32px rgba(21, 21, 30, 0.16);
   }
 
   .story-video__caption {
@@ -240,12 +242,44 @@
 
   .race-chapter__media img {
     inline-size: 100%;
+    border-radius: $radius-lg;
   }
 
   .race-chapter__media figcaption {
     margin-block-start: $space-3;
     color: var(--color-text-muted);
     font-size: $font-size-small;
+  }
+
+  .race-chapter__photo img {
+    inline-size: 100%;
+    border-radius: $radius-lg;
+  }
+
+  .race-chapter__photo figcaption {
+    margin-block-start: $space-3;
+    color: var(--color-text-muted);
+    font-size: $font-size-small;
+  }
+
+  // Chapter 01: aerial photo and circuit map as an establishing spread
+  .race-chapter__gallery {
+    display: grid;
+    gap: $space-5;
+
+    @include from("md") {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      align-items: start;
+    }
+
+    @include from("lg") {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .race-chapter__photo--wide img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
   }
 
   .race-chapter__stats {
@@ -349,14 +383,15 @@
     align-content: start;
     gap: $space-1;
     padding: $space-5;
-    border-block-start: 6px solid $color-border;
+    border: 1px solid $color-border-subtle;
+    border-radius: $radius-md;
     background-color: $color-bg-muted;
   }
 
   .driver-list__item--leader {
     @include surface-dark;
 
-    border-block-start-color: $color-accent;
+    border-color: $color-graphite;
   }
 
   .driver-list__role-tag {
@@ -396,12 +431,13 @@
   .race-results__group {
     padding: $space-5;
     border: 1px solid $color-border-subtle;
+    border-radius: $radius-lg;
   }
 
   .race-results__group--official {
     container: podium / inline-size;
     border: 2px solid $color-border;
-    border-block-start: 6px solid $color-accent;
+    border-block-start: 3px solid $color-accent;
   }
 
   .race-results__heading {
@@ -420,8 +456,9 @@
     gap: $space-1;
     min-inline-size: 0;
     padding: $space-4;
-    border-block-start: 4px solid $color-border;
+    border-block-start: 2px solid $color-border;
     background-color: $color-bg-muted;
+    border-radius: $radius-md;
   }
 
   .race-results__step--first {

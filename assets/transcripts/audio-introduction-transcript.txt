@@ -1,11 +1,11 @@
 StoryCast: The Race, in Your Ears
-Transcript of the original audio introduction (0:43)
-Narration: synthetic voice (Microsoft Hazel, Windows text-to-speech). No music or sound effects.
+Transcript of the original audio introduction (0:50)
+Narrated by Mufaro, the creator of StoryCast. No music or sound effects.
 
-[0:00] Narrator: This is StoryCast. On the first of August, 2021, the Hungaroring hosted the Hungarian Grand Prix.
+[0:00] Narrator: August 1st, 2021. Rain has arrived at the Hungaroring and the Hungarian Grand Prix is about to begin. Lewis Hamilton starts from pole position, but before the opening lap is over, everything changes.
 
-[0:09] Narrator: Rain fell just before the start, and every car lined up on intermediate tyres. Moments after the start, a collision at the first corner took several cars out, and the race was stopped under a red flag.
+[0:16] Narrator: Cars collide, championship contenders are caught in the chaos and the race is stopped. But what happens next is even more extraordinary.
 
-[0:22] Narrator: As the track dried, Lewis Hamilton lined up alone on the starting grid. Every other car started from the pit lane, on slick tyres.
+[0:25] Narrator: When the race restarts, Hamilton's the only driver on the starting grid. Everyone else is headed into the pits. And suddenly, a driver nobody expected to win finds himself leading the race. His name? Esteban Ocon.
 
-[0:32] Narrator: Out of the chaos, Esteban Ocon took the lead, held off the pressure, and won his first Formula 1 race. This is the story of the day everything went wrong.
+[0:42] Narrator: This is the story of the 2021 Hungarian Grand Prix. When everything goes wrong.

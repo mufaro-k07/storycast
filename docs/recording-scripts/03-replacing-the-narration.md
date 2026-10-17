@@ -1,5 +1,9 @@
 # Replacing the Synthetic Narration
 
+> **Status (17 October 2026): done.** Both human recordings are integrated. The creator recorded their own wording rather than these scripts word for word, so the captions and transcripts follow the recordings, not scripts 1 and 2.
+> - **Homepage:** `assets/audio/homepage-introduction-human.m4a`.
+> - **Video:** the explainer was rebuilt around `assets/audio/story-detail-narration-human.m4a`.
+
 The current audio and video use a synthetic voice (Microsoft Hazel, Windows text-to-speech). Keep them in place until the human recordings are ready, checked and integrated.
 
 ## What to hand over

@@ -184,6 +184,8 @@
   .featured-story__media {
     position: relative;
     grid-area: media;
+    border-radius: $radius-lg;
+    overflow: hidden;
   }
 
   .featured-story__image {
@@ -307,6 +309,9 @@
     flex-direction: column;
     min-inline-size: 0;
     background-color: $color-bg-light;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(21, 21, 30, 0.08);
   }
 
   .moment-card--chaos {
@@ -338,19 +343,24 @@
 
   .moment-card__image {
     inline-size: 100%;
-  }
-
-  // The diagram's own background fills the extra height of the tall card
-  .moment-card--chaos .moment-card__media {
-    display: grid;
-    flex: 1;
-    align-items: center;
-    background-color: $color-bg-muted;
-  }
-
-  .moment-card--restart .moment-card__image {
     aspect-ratio: 16 / 9;
     object-fit: cover;
+  }
+
+  // The tall card's photo fills the extra height
+  .moment-card--chaos .moment-card__media {
+    position: relative;
+    flex: 1;
+    min-block-size: rem(240);
+  }
+
+  .moment-card--chaos .moment-card__image {
+    @include from("lg") {
+      position: absolute;
+      inset: 0;
+      block-size: 100%;
+      aspect-ratio: auto;
+    }
   }
 
   .moment-card__body {
@@ -395,20 +405,6 @@
 
   .moment-card__link {
     justify-self: start;
-  }
-
-  // Oversized "P1" on the victory card (decorative)
-  .moment-card__mark {
-    padding: $space-5 $space-5 0;
-    color: var(--color-decorative-number);
-    font-size: fluid(120, 200);
-    font-weight: $font-weight-bold;
-    letter-spacing: -0.04em;
-    line-height: 0.8;
-
-    @include from("lg") {
-      padding: $space-6 $space-6 0;
-    }
   }
 
 // Audio
@@ -459,7 +455,8 @@
     display: grid;
     gap: $space-4;
     padding: $space-5;
-    border: 2px solid $color-graphite;
+    border: 1px solid $color-graphite;
+    border-radius: $radius-lg;
 
     @include from("md") {
       padding: $space-6;

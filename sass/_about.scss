@@ -110,6 +110,7 @@
     @include surface-dark;
 
     padding: $space-6 $space-5;
+    border-radius: $radius-lg;
 
     @include from("md") {
       padding: $space-7;
@@ -166,6 +167,7 @@
   .accessibility-card {
     container: accessibility-card / inline-size;
     background-color: $color-bg-light;
+    border-radius: $radius-lg;
 
     @include from("lg") {
       grid-column: span 2;
@@ -278,7 +280,7 @@
     justify-items: start;
     gap: $space-2;
     padding-block-start: $space-5;
-    border-block-start: 4px solid $color-border;
+    border-block-start: 2px solid $color-border;
   }
 
   .explore-guide__number {
@@ -288,6 +290,8 @@
     font-size: $font-size-eyebrow;
     font-weight: $font-weight-bold;
     letter-spacing: $letter-spacing-eyebrow;
+    border-radius: $radius-pill;
+    padding: $space-1 $space-3;
   }
 
   .explore-guide__title {

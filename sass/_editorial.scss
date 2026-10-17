@@ -86,13 +86,14 @@
 
   .chip {
     padding: $space-1 $space-3;
-    border: 2px solid var(--color-rule);
+    border: 1px solid var(--color-rule);
+    border-radius: $radius-pill;
     font-size: $font-size-small;
     font-weight: $font-weight-semibold;
     line-height: $line-height-ui;
   }
 
-// Official Formula 1 video: a link card to YouTube (the clips would not play when embedded)
+// Official Formula 1 footage: native player with its written context
   .official-video {
     container: official-video / inline-size;
   }
@@ -102,43 +103,13 @@
     gap: $space-5;
   }
 
-  // Mouse shortcut only: the text link below is the keyboard and screen reader route
-  .official-video__frame {
-    position: relative;
-    display: block;
+  .official-video__video {
+    inline-size: 100%;
+    block-size: auto;
     aspect-ratio: 16 / 9;
-    overflow: hidden;
     background-color: $color-bg-dark;
     box-shadow: 0 0 0 1px $color-graphite;
-  }
-
-  .official-video__thumb {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-  }
-
-  // Play mark: red square with a white triangle (decorative)
-  .official-video__play {
-    position: absolute;
-    inset-block-start: 50%;
-    inset-inline-start: 50%;
-    inline-size: fluid(56, 80);
-    translate: -50% -50%;
-    aspect-ratio: 1;
-    background-color: $color-accent;
-  }
-
-  .official-video__play::after {
-    content: "";
-    position: absolute;
-    inset: 32% 30% 32% 38%;
-    background-color: $color-white;
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-  }
-
-  .official-video__frame:hover .official-video__play {
-    background-color: $color-dark-red;
+    border-radius: $radius-lg;
   }
 
   .official-video__info {
