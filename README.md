@@ -116,21 +116,3 @@ Serve the project root with a local development server so relative paths behave 
 2. Open `index.html` and choose **Open with Live Server** (or click **Go Live** in the status bar).
 3. Run `npm run dev` in a terminal alongside it so style changes are recompiled.
 
-## Development status
-
-**Phase 1: Foundation and Sass architecture (current)**
-
-Done:
-
-- Folder structure, npm scripts and Dart Sass build
-- Colour, typography and spacing tokens; cascade layers; BEM components
-- Three pages with semantic landmarks, one H1 each, and a shared header, navigation and footer
-- Skip link, visible focus indicators and reduced-motion support
-
-Not yet built (planned for later phases):
-
-- Full Home, Story and About & Access page content
-- Audio and video media, captions and transcripts
-- Interactive race timeline and strategy interaction
-- Mobile menu (navigation links are currently always visible)
-- A full accessibility audit; the site does not yet claim WCAG 2.1 AA conformance
