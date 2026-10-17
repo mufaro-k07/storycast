@@ -1,0 +1,189 @@
+// =========================================================
+// Components layer
+// Shared, reusable components named with BEM.
+// =========================================================
+
+@use "tokens" as *;
+
+@layer components {
+  // ---------------------------------------------------------
+  // Site header
+  // ---------------------------------------------------------
+  .site-header {
+    background-color: $color-bg-light;
+    color: $color-text-primary;
+  }
+
+  .site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: $target-min-size;
+    color: $color-text-primary;
+    font-size: $font-size-card-heading;
+    font-weight: $font-weight-medium;
+    letter-spacing: $letter-spacing-brand;
+    line-height: $line-height-tight;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .site-header__brand:hover {
+    color: $color-text-primary;
+  }
+
+  .site-header__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: $space-nav-gap;
+
+    @include from("md") {
+      column-gap: $space-6;
+    }
+  }
+
+  .site-header__link {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: $target-min-size;
+    color: $color-text-primary;
+    font-size: $font-size-nav;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-ui;
+    text-decoration: none;
+    text-underline-offset: 0.55em;
+  }
+
+  .site-header__link:hover {
+    color: $color-text-primary;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  // Active page: red bar beneath the label, as in the mockups.
+  // An underline (not a border) adapts correctly in forced-colours mode.
+  .site-header__link[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-color: $color-accent;
+    text-decoration-thickness: 4px;
+  }
+
+  // ---------------------------------------------------------
+  // Site footer
+  // ---------------------------------------------------------
+  .site-footer {
+    --color-link: #{$color-link-on-dark};
+    --color-link-hover: #{$color-link-on-dark};
+    --color-text-accent: #{$color-text-accent-on-dark};
+    --color-focus: #{$color-focus-on-dark};
+
+    padding-block: $space-8 $space-6;
+    background-color: $color-bg-dark;
+    color: $color-text-inverse;
+  }
+
+  .site-footer__brand {
+    font-size: $font-size-card-heading;
+    font-weight: $font-weight-medium;
+    letter-spacing: $letter-spacing-brand;
+    line-height: $line-height-tight;
+    text-transform: uppercase;
+  }
+
+  .site-footer__tagline {
+    margin-block-start: $space-3;
+  }
+
+  // Racing red fails 4.5:1 as small text on racing black, so the label
+  // is white and the red appears as a non-text accent rule instead.
+  .site-footer__label {
+    display: inline-block;
+    margin-block-end: $space-3;
+    padding-block-end: $space-1;
+    border-block-end: 2px solid $color-accent;
+    font-size: $font-size-eyebrow;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    line-height: $line-height-ui;
+    text-transform: uppercase;
+  }
+
+  .site-footer__link {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: $target-min-size;
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  .site-footer__link:hover,
+  .site-footer__link[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+  }
+
+  .site-footer__link[aria-current="page"] {
+    text-decoration-color: $color-accent;
+  }
+
+  .site-footer__bottom {
+    margin-block-start: $space-7;
+    padding-block-start: $space-5;
+    border-block-start: 1px solid $color-border-on-dark;
+  }
+
+  // ---------------------------------------------------------
+  // Button
+  // Use on <a> or <button>. Square corners as in the mockups.
+  // The transparent border becomes visible in forced-colours mode.
+  // ---------------------------------------------------------
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-2;
+    min-block-size: $target-min-size;
+    padding: $space-component-padding-block $space-component-padding-inline;
+    border: 2px solid transparent;
+    border-radius: 0;
+    font-family: $font-body;
+    font-size: $font-size-nav;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-ui;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .button--primary {
+    background-color: $color-button-primary-bg;
+    color: $color-button-primary-text;
+  }
+
+  .button--primary:hover {
+    background-color: $color-button-primary-bg-hover;
+    color: $color-button-primary-text;
+  }
+
+  .button--secondary {
+    background-color: $color-button-secondary-bg;
+    color: $color-button-secondary-text;
+  }
+
+  .button--secondary:hover {
+    background-color: $color-button-secondary-bg-hover;
+    color: $color-button-secondary-text;
+  }
+
+  // ---------------------------------------------------------
+  // Eyebrow: small uppercase label above a heading
+  // ---------------------------------------------------------
+  .eyebrow {
+    color: var(--color-text-accent);
+    font-size: $font-size-eyebrow;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    line-height: $line-height-ui;
+    text-transform: uppercase;
+  }
+}

@@ -1,2 +1,77 @@
-$background: #ffffff;
-$text: #171717;
+// =========================================================
+// Colour tokens
+// Palette taken from the StoryCast Figma mockups.
+//
+// WCAG 2.1 contrast ratios (calculated, not estimated):
+//   racing-black on white          18.14:1
+//   racing-black on off-white      16.49:1
+//   graphite on white              12.63:1
+//   dark-red on white               7.38:1
+//   dark-red on off-white           6.71:1
+//   racing-red on white             4.97:1  AA normal text
+//   racing-red on off-white         4.52:1  AA normal text (narrowly)
+//   white on racing-red             4.97:1  AA normal text
+//   white on dark-red               7.38:1
+//   racing-red on racing-black      3.65:1  large text / UI only
+//   dark-red on racing-black        2.46:1  never use for text
+//   mid-grey on white / off-white   1.66:1 / 1.51:1  decorative only
+// =========================================================
+
+// ---------------------------------------------------------
+// Palette
+// ---------------------------------------------------------
+$color-racing-red: #e10600;
+$color-racing-black: #15151e;
+$color-white: #ffffff;
+$color-off-white: #f4f4f4;
+$color-graphite: #333333;
+$color-dark-red: #b00000;
+
+// Used in the mockups for oversized decorative chapter numbers.
+// Fails text contrast, so content using it must be decorative.
+$color-mid-grey: #c9c9c9;
+
+// ---------------------------------------------------------
+// Semantic tokens
+// ---------------------------------------------------------
+
+// Text
+$color-text-primary: $color-racing-black;
+$color-text-secondary: $color-graphite;
+$color-text-inverse: $color-white;
+// Small accent text (eyebrows, labels) on light surfaces.
+// Dark red is used rather than racing red for its wider margin.
+$color-text-accent: $color-dark-red;
+// Racing red fails 4.5:1 on racing black, so small accent text on
+// dark surfaces falls back to white; red stays as a non-text accent.
+$color-text-accent-on-dark: $color-white;
+
+// Links
+$color-link: $color-dark-red;
+$color-link-hover: $color-racing-black;
+$color-link-on-dark: $color-white;
+
+// Backgrounds
+$color-bg-page: $color-white;
+$color-bg-light: $color-white;
+$color-bg-muted: $color-off-white;
+$color-bg-dark: $color-racing-black;
+
+// Buttons (white label: 4.97:1 on red, 7.38:1 on dark red)
+$color-button-primary-bg: $color-racing-red;
+$color-button-primary-bg-hover: $color-dark-red;
+$color-button-primary-text: $color-white;
+$color-button-secondary-bg: $color-dark-red;
+$color-button-secondary-bg-hover: $color-racing-red;
+$color-button-secondary-text: $color-white;
+
+// Borders and accents
+$color-border: $color-racing-black;
+$color-border-subtle: $color-mid-grey;
+$color-border-on-dark: $color-graphite;
+// Non-text accents: active-page indicators, rules (3.65:1+ on all surfaces)
+$color-accent: $color-racing-red;
+
+// Focus indicators (7.38:1 on white, 6.71:1 on off-white, 18.14:1 on black)
+$color-focus: $color-dark-red;
+$color-focus-on-dark: $color-white;

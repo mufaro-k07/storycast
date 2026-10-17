@@ -1,11 +1,11 @@
 {
   "name": "storycast",
   "version": "1.0.0",
-  "description": "This is the Story Cast Website for the Advanced Frontend Web Development.\r Made both Accessible and Responsive",
-  "main": "index.js",
+  "private": true,
+  "description": "StoryCast: an accessible, responsive multimedia storytelling microsite for Advanced Frontend Web Development.",
   "scripts": {
-    "sass:watch": "sass --watch sass/main.scss css/main.css --no-source-map",
-    "sass:build": "sass sass/main.scss css/main.css --no-source-map"
+    "dev": "sass --watch sass/main.scss css/main.css",
+    "build": "sass sass/main.scss css/main.css --no-source-map"
   },
   "repository": {
     "type": "git",

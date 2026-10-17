@@ -1,0 +1,10 @@
+// =========================================================
+// Token index
+// Forwards every design token and helper so each partial only needs:
+//   @use "tokens" as *;
+// =========================================================
+
+@forward "helpers";
+@forward "colors";
+@forward "typography";
+@forward "spacing";

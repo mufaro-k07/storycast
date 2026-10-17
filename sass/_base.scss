@@ -1,0 +1,92 @@
+// =========================================================
+// Base layer
+// Document-wide defaults for typography, colour and links.
+// =========================================================
+
+@use "tokens" as *;
+
+@layer base {
+  // Context-dependent colours are custom properties so dark surfaces
+  // (see .section--dark and .site-footer) can switch them in one place.
+  :root {
+    --color-link: #{$color-link};
+    --color-link-hover: #{$color-link-hover};
+    --color-text-accent: #{$color-text-accent};
+    --color-focus: #{$color-focus};
+
+    color-scheme: light;
+  }
+
+  body {
+    min-block-size: 100vh;
+    min-block-size: 100dvh;
+    background-color: $color-bg-page;
+    color: $color-text-primary;
+    font-family: $font-body;
+    font-size: $font-size-body;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: $font-display;
+    font-weight: $font-weight-display;
+    font-synthesis: none;
+    line-height: $line-height-heading;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: $font-size-page-heading;
+  }
+
+  h2 {
+    font-size: $font-size-section-heading;
+  }
+
+  h3 {
+    font-size: $font-size-card-heading;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: $font-size-body;
+  }
+
+  h5,
+  h6 {
+    font-family: $font-body;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-ui;
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.2em;
+  }
+
+  a:hover {
+    color: var(--color-link-hover);
+    text-decoration-thickness: 0.14em;
+  }
+
+  strong,
+  b {
+    font-weight: $font-weight-semibold;
+  }
+
+  small {
+    font-size: $font-size-small;
+  }
+
+  // White on racing red: 4.97:1
+  ::selection {
+    background-color: $color-racing-red;
+    color: $color-white;
+  }
+}

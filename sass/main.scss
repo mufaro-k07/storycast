@@ -1,15 +1,16 @@
-@use "colors" as colors;
-@use "typography" as typography;
-@use "spacing" as spacing;
+// =========================================================
+// StoryCast — Sass entry point
+// Compiled to css/main.css with `npm run build` (or `npm run dev`).
+//
+// Token partials (_colors, _typography, _spacing, _helpers) emit no
+// CSS; each partial below pulls them in via `@use "tokens" as *`.
+// "layers" must come first so the layer order statement is the first
+// thing in the compiled CSS.
+// =========================================================
 
-@layer reset, base, layout, components, utilities;
-
-@layer base {
-    body {
-        margin: 0;
-        background-color: colors.$background;
-        color: colors.$text;
-        font-family: typography.$font-body;
-        padding: spacing.$spacing-base;
-    }
-}
+@use "layers";
+@use "reset";
+@use "base";
+@use "layout";
+@use "components";
+@use "accessibility";

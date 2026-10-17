@@ -1,1 +1,53 @@
-$font-body: 'Inter', sans-serif;
+// =========================================================
+// Typography tokens
+// Prata (display) + Poppins (body/interface), loaded from Google Fonts.
+// Font sizes scale fluidly from the 390px mobile mockup to the
+// 1440px desktop mockup; see fluid() in _helpers.scss.
+// =========================================================
+
+@use "helpers" as *;
+
+// ---------------------------------------------------------
+// Families
+// ---------------------------------------------------------
+$font-display: "Prata", Georgia, "Times New Roman", serif;
+$font-body: "Poppins", "Segoe UI", Arial, Helvetica, sans-serif;
+
+// ---------------------------------------------------------
+// Weights
+// ---------------------------------------------------------
+// Prata only ships a regular weight; never bold it (no synthetic bold).
+$font-weight-display: 400;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// ---------------------------------------------------------
+// Sizes (mobile → desktop)
+// ---------------------------------------------------------
+$font-size-hero: fluid(38, 64);
+$font-size-page-heading: fluid(36, 52);
+$font-size-section-heading: fluid(28, 36);
+$font-size-card-heading: fluid(22, 24);
+$font-size-body: fluid(16, 18);
+$font-size-nav: rem(16);
+$font-size-small: rem(14);
+$font-size-eyebrow: rem(14);
+// Oversized decorative chapter numbers (01, 02, 03 …)
+$font-size-chapter: fluid(90, 150);
+
+// ---------------------------------------------------------
+// Line heights and tracking
+// ---------------------------------------------------------
+$line-height-tight: 1.1;
+$line-height-heading: 1.2;
+$line-height-ui: 1.5;
+$line-height-body: 1.65;
+
+$letter-spacing-eyebrow: 0.1em;
+$letter-spacing-brand: 0.06em;
+
+// Comfortable maximum line length for long-form reading
+$measure: 65ch;
