@@ -1,0 +1,308 @@
+
+@use "tokens" as *;
+
+@layer components {
+  .hero {
+    display: grid;
+    grid-template-columns:
+      [full-start] minmax($gutter, 1fr)
+      [content-start] minmax(0, $content-max-width)
+      [content-end] minmax($gutter, 1fr)
+      [full-end];
+    row-gap: $space-7;
+    padding-block: $space-section;
+
+    @include from("lg") {
+      grid-template-columns:
+        [full-start] minmax($gutter, 1fr)
+        [content-start] minmax(0, calc($content-max-width / 2))
+        [split] minmax(0, calc($content-max-width / 2))
+        [content-end] minmax($gutter, 1fr)
+        [full-end];
+      padding-block: 0;
+    }
+  }
+
+  .hero__content {
+    grid-column: content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include from("lg") {
+      grid-column: content-start / split;
+      align-self: center;
+      padding-block: $space-10;
+      padding-inline-end: $space-layout-gap;
+    }
+  }
+
+  .hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+  }
+
+  .hero__eyebrow::before {
+    content: "";
+    flex: none;
+    inline-size: $space-6;
+    block-size: 2px;
+    background-color: $color-accent;
+  }
+
+  .hero__title {
+    margin-block-start: $space-5;
+    font-size: $font-size-hero;
+    line-height: $line-height-tight;
+  }
+
+  .hero__subtitle {
+    margin-block-start: $space-6;
+    font-family: $font-display;
+    font-size: $font-size-card-heading;
+    line-height: $line-height-heading;
+  }
+
+  .hero__intro {
+    max-inline-size: $measure;
+    margin-block-start: $space-4;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+    align-self: stretch;
+    margin-block-start: $space-7;
+
+    @include from("md") {
+      flex-flow: row wrap;
+      align-self: flex-start;
+    }
+  }
+
+  .hero__illustration {
+    grid-column: content;
+    aspect-ratio: 4 / 3;
+
+    @include from("md") {
+      aspect-ratio: 16 / 9;
+    }
+
+    @include from("lg") {
+      position: relative;
+      grid-column: split / full-end;
+      aspect-ratio: auto;
+    }
+  }
+
+  .hero__image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 55% 62%;
+
+    @include from("lg") {
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .featured-story__container {
+    container: featured-story / inline-size;
+  }
+
+  .featured-story__card {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "media"
+      "body";
+    gap: $space-5;
+  }
+
+  .featured-story__header {
+    grid-area: header;
+  }
+
+  .featured-story__title {
+    margin-block-start: $space-3;
+    font-size: $font-size-feature-heading;
+  }
+
+  .featured-story__meta {
+    margin-block-start: $space-4;
+    color: $color-text-secondary;
+    font-size: $font-size-eyebrow;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    line-height: $line-height-ui;
+    text-transform: uppercase;
+  }
+
+  .featured-story__media {
+    grid-area: media;
+  }
+
+  .featured-story__image {
+    inline-size: 100%;
+  }
+
+  .featured-story__body {
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $space-4;
+    max-inline-size: $measure;
+  }
+
+  @container featured-story (min-width: 48rem) {
+    .featured-story__card {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      grid-template-areas:
+        "media header"
+        "media body";
+      column-gap: $space-layout-gap;
+      row-gap: $space-6;
+    }
+
+    .featured-story__header {
+      align-self: end;
+    }
+
+    .featured-story__media {
+      align-self: center;
+    }
+  }
+
+  .race-moments__grid {
+    display: grid;
+
+    @include from("lg") {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: $space-layout-gap;
+      padding-block-start: $space-6;
+      border-block-start: 2px solid $color-border;
+    }
+  }
+
+  .moment-card {
+    display: grid;
+    grid-template-columns: min($space-10, 30vw) minmax(0, 1fr);
+    align-content: start;
+    column-gap: $space-4;
+    padding-block: $space-6;
+    border-block-end: 1px solid $color-border-subtle;
+
+    @include from("lg") {
+      grid-template-columns: minmax(0, 1fr);
+      padding-block: 0;
+      border-block-end: 0;
+    }
+  }
+
+  .moment-card__number {
+    grid-row: span 3;
+    font-size: min($font-size-chapter-compact, 22vw);
+
+    @include from("lg") {
+      grid-row: auto;
+      font-size: $font-size-chapter;
+      margin-block-end: $space-4;
+    }
+  }
+
+  .moment-card__text {
+    margin-block-start: $space-2;
+  }
+
+  .moment-card__link {
+    justify-self: start;
+    margin-block-start: $space-2;
+  }
+
+  // Audio 
+  .audio-feature__inner {
+    display: grid;
+    gap: $space-6;
+
+    @include from("lg") {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      align-items: start;
+      gap: $space-layout-gap;
+    }
+  }
+
+  .audio-feature__content {
+    display: grid;
+    gap: $space-3;
+  }
+
+  .audio-feature__player {
+    display: grid;
+    gap: $space-2;
+    padding: $space-5;
+    border: 2px solid $color-border;
+  }
+
+  .audio-feature__player--pending {
+    border-style: dashed;
+    background-color: $color-bg-muted;
+  }
+
+  .audio-feature__status {
+    color: var(--color-text-accent);
+    font-size: $font-size-eyebrow;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    line-height: $line-height-ui;
+    text-transform: uppercase;
+  }
+
+// Access formats
+  .access-formats__grid {
+    display: grid;
+    gap: $space-card-gap;
+
+    @include from("md") {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .access-card {
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+    padding: $space-card-padding;
+    background-color: $color-bg-light;
+
+    @include from("lg") {
+      padding: $space-6;
+    }
+  }
+
+  .access-card__title {
+    margin-block-start: $space-3;
+    color: var(--color-text-accent);
+    font-family: $font-body;
+    font-size: $font-size-card-heading;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+  }
+
+  .access-card__status {
+    margin-block-start: auto;
+    padding-block-start: $space-4;
+    color: $color-text-secondary;
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-eyebrow;
+    text-transform: uppercase;
+  }
+
+  .access-formats__link {
+    margin-block-start: $space-7;
+  }
+}

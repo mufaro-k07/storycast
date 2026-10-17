@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="760" viewBox="0 0 750 760">
+  <!-- Original StoryCast hero artwork, extracted from design_reference/home-desktop.svg (group race-art-112). Decorative. -->
+  <rect width="750" height="760" fill="#15151E"/>
+  <polygon points="0,760 285,0 465,0 180,760" fill="#333333"/>
+  <polygon points="435,760 615,0 750,0 750,760" fill="#B00000"/>
+  <g stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.7">
+    <line x1="-50" y1="70" x2="800" y2="20"/>
+    <line x1="-50" y1="135" x2="800" y2="85"/>
+    <line x1="-50" y1="200" x2="800" y2="150"/>
+    <line x1="-50" y1="265" x2="800" y2="215"/>
+    <line x1="-50" y1="330" x2="800" y2="280"/>
+    <line x1="-50" y1="395" x2="800" y2="345"/>
+    <line x1="-50" y1="460" x2="800" y2="410"/>
+  </g>
+  <polygon points="285,460.6 340,415.6 470,397.6 560,429.6 605,473.6 285,473.6" fill="#E10600"/>
+  <rect x="350" y="391.6" width="82" height="27" fill="#FFFFFF"/>
+  <circle cx="340" cy="477.6" r="28" fill="#15151E" stroke="#FFFFFF" stroke-width="4"/>
+  <circle cx="550" cy="477.6" r="28" fill="#15151E" stroke="#FFFFFF" stroke-width="4"/>
+</svg>

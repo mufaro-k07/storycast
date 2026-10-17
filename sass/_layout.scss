@@ -1,14 +1,6 @@
-// =========================================================
-// Layout layer
-// Page containers, section rhythm, shared header/footer structure
-// and generic Flexbox/Grid primitives. Visual styling of the header
-// and footer lives in _components.scss.
-// =========================================================
-
 @use "tokens" as *;
 
 @layer layout {
-  // Sticky footer: main grows so the footer sits at the bottom of short pages.
   body {
     display: flex;
     flex-direction: column;
@@ -18,9 +10,6 @@
     flex: 1 0 auto;
   }
 
-  // ---------------------------------------------------------
-  // Containers and sections
-  // ---------------------------------------------------------
   .page-container {
     inline-size: 100%;
     max-inline-size: calc($content-max-width + 2 * $gutter);
@@ -50,9 +39,6 @@
     color: $color-text-inverse;
   }
 
-  // ---------------------------------------------------------
-  // Shared header
-  // ---------------------------------------------------------
   .site-header__inner {
     display: flex;
     flex-wrap: wrap;
@@ -66,9 +52,6 @@
     }
   }
 
-  // ---------------------------------------------------------
-  // Shared footer
-  // ---------------------------------------------------------
   .site-footer__inner {
     display: grid;
     gap: $space-6;
@@ -86,17 +69,10 @@
     gap: $space-2 $space-6;
   }
 
-  // ---------------------------------------------------------
-  // Primitives
-  // ---------------------------------------------------------
-
-  // Vertical rhythm between direct children.
-  // Adjust per instance with --flow-space.
   .flow > * + * {
     margin-block-start: var(--flow-space, 1em);
   }
 
-  // Horizontal group that wraps on narrow screens.
   .cluster {
     display: flex;
     flex-wrap: wrap;
@@ -104,8 +80,6 @@
     gap: var(--cluster-gap, #{$space-4});
   }
 
-  // Responsive grid: as many columns as fit, never narrower than
-  // --grid-min, and never wider than its container.
   .auto-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min, 18rem)), 1fr));

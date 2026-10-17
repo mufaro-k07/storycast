@@ -1,26 +1,14 @@
-// =========================================================
-// Helpers: functions, breakpoints and mixins
-// Emits no CSS on its own.
-// =========================================================
-
 @use "sass:map";
 @use "sass:math";
 
 $_root-font-size: 16;
-
-// Viewport range used for fluid values (mobile mockup → desktop mockup).
 $_fluid-min-vw: 390;
 $_fluid-max-vw: 1440;
 
-// Convert a unitless pixel value to rem, e.g. rem(24) → 1.5rem.
 @function rem($px) {
   @return math.div($px, $_root-font-size) * 1rem;
 }
 
-// Fluid value that scales linearly between the mobile and desktop
-// mockup widths and is clamped at both ends. The rem component keeps
-// the result responsive to browser zoom and user font-size settings.
-// e.g. fluid(38, 64) → clamp(2.375rem, 1.771rem + 2.476vw, 4rem)
 @function fluid($min-px, $max-px) {
   $slope: math.div($max-px - $min-px, $_fluid-max-vw - $_fluid-min-vw);
   $intercept: $min-px - $slope * $_fluid-min-vw;
@@ -30,15 +18,12 @@ $_fluid-max-vw: 1440;
   @return clamp(rem($min-px), $base * 1rem + $vw * 1vw, rem($max-px));
 }
 
-// Breakpoints in em so media queries respond to browser zoom.
-// Target widths: 320, 390 (base styles), 768, 1024, 1440.
 $breakpoints: (
   "md": 48em,  // 768px
   "lg": 64em,  // 1024px
   "xl": 90em,  // 1440px
 );
 
-// Mobile-first media query: @include from("md") { ... }
 @mixin from($name) {
   @if not map.has-key($breakpoints, $name) {
     @error "Unknown breakpoint `#{$name}`. Use one of: #{map.keys($breakpoints)}.";
@@ -49,7 +34,6 @@ $breakpoints: (
   }
 }
 
-// Hide content visually while keeping it available to assistive technology.
 @mixin visually-hidden {
   position: absolute;
   inline-size: 1px;

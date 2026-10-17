@@ -1,9 +1,1 @@
-// =========================================================
-// Cascade layer order
-// Must be the first CSS emitted. Sass requires @use rules to come
-// before any other rules in main.scss, so the order statement lives
-// in its own partial that main.scss loads first.
-// Later layers win over earlier ones, regardless of selector specificity.
-// =========================================================
-
 @layer reset, base, layout, components, utilities;

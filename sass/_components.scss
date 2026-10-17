@@ -1,14 +1,7 @@
-// =========================================================
-// Components layer
-// Shared, reusable components named with BEM.
-// =========================================================
-
 @use "tokens" as *;
 
 @layer components {
-  // ---------------------------------------------------------
-  // Site header
-  // ---------------------------------------------------------
+// Header
   .site-header {
     background-color: $color-bg-light;
     color: $color-text-primary;
@@ -25,6 +18,7 @@
     line-height: $line-height-tight;
     text-decoration: none;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
   }
 
   .site-header__brand:hover {
@@ -59,17 +53,13 @@
     text-decoration-thickness: 2px;
   }
 
-  // Active page: red bar beneath the label, as in the mockups.
-  // An underline (not a border) adapts correctly in forced-colours mode.
   .site-header__link[aria-current="page"] {
     text-decoration: underline;
     text-decoration-color: $color-accent;
     text-decoration-thickness: 4px;
   }
 
-  // ---------------------------------------------------------
-  // Site footer
-  // ---------------------------------------------------------
+// Footer
   .site-footer {
     --color-link: #{$color-link-on-dark};
     --color-link-hover: #{$color-link-on-dark};
@@ -93,8 +83,6 @@
     margin-block-start: $space-3;
   }
 
-  // Racing red fails 4.5:1 as small text on racing black, so the label
-  // is white and the red appears as a non-text accent rule instead.
   .site-footer__label {
     display: inline-block;
     margin-block-end: $space-3;
@@ -132,11 +120,7 @@
     border-block-start: 1px solid $color-border-on-dark;
   }
 
-  // ---------------------------------------------------------
-  // Button
-  // Use on <a> or <button>. Square corners as in the mockups.
-  // The transparent border becomes visible in forced-colours mode.
-  // ---------------------------------------------------------
+// Buttons
   .button {
     display: inline-flex;
     align-items: center;
@@ -175,9 +159,42 @@
     color: $color-button-secondary-text;
   }
 
-  // ---------------------------------------------------------
-  // Eyebrow: small uppercase label above a heading
-  // ---------------------------------------------------------
+  .text-link {
+    display: inline-block;
+    padding-block: $space-2;
+    color: var(--color-link);
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-ui;
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+  }
+
+  .text-link__arrow {
+    display: inline;
+  }
+
+// Section header
+  .section-header {
+    display: grid;
+    gap: $space-3;
+    margin-block-end: $space-7;
+  }
+
+// Chapter number
+  .chapter-number {
+    color: $color-decorative-number;
+    font-family: $font-display;
+    font-size: $font-size-chapter;
+    font-weight: $font-weight-display;
+    font-synthesis: none;
+    line-height: 0.9;
+  }
+
   .eyebrow {
     color: var(--color-text-accent);
     font-size: $font-size-eyebrow;

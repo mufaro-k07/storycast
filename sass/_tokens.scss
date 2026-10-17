@@ -1,9 +1,4 @@
-// =========================================================
-// Token index
-// Forwards every design token and helper so each partial only needs:
-//   @use "tokens" as *;
-// =========================================================
-
+// Forward is used to reexport the contents of other sass files which will allow importin them as a single line.
 @forward "helpers";
 @forward "colors";
 @forward "typography";

@@ -1,13 +1,5 @@
-// =========================================================
-// Spacing and layout tokens
-// 4px-based scale, output in rem.
-// =========================================================
-
 @use "helpers" as *;
 
-// ---------------------------------------------------------
-// Scale
-// ---------------------------------------------------------
 $space-1: rem(4);
 $space-2: rem(8);
 $space-3: rem(12);
@@ -19,9 +11,6 @@ $space-8: rem(64);
 $space-9: rem(80);
 $space-10: rem(96);
 
-// ---------------------------------------------------------
-// Semantic spacing
-// ---------------------------------------------------------
 $space-component-padding-block: $space-4;
 $space-component-padding-inline: $space-5;
 $space-card-padding: $space-5;
@@ -30,12 +19,7 @@ $space-layout-gap: fluid(24, 48);
 $space-nav-gap: $space-5;
 $space-section: fluid(64, 96);
 
-// ---------------------------------------------------------
-// Layout
-// ---------------------------------------------------------
-// Horizontal page padding: 20px on mobile → 80px on desktop (per mockups)
+
 $gutter: fluid(20, 80);
 $content-max-width: rem(1200);
-
-// Minimum size for pointer targets such as nav links
 $target-min-size: rem(44);

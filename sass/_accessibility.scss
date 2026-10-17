@@ -1,17 +1,5 @@
-// =========================================================
-// Accessibility
-// Focus indicators, skip link, screen-reader utilities and
-// reduced-motion support. Each rule sits in the layer that
-// matches its responsibility.
-// =========================================================
-
 @use "tokens" as *;
 
-// ---------------------------------------------------------
-// Focus indicators
-// --color-focus switches to white on dark surfaces, so the ring keeps
-// at least 3:1 contrast against both light and dark backgrounds.
-// ---------------------------------------------------------
 @layer base {
   :focus-visible {
     outline: 3px solid var(--color-focus);
@@ -19,9 +7,7 @@
   }
 }
 
-// ---------------------------------------------------------
-// Skip link: hidden until it receives keyboard focus
-// ---------------------------------------------------------
+// Skip to main content for keyboard users which will be visually hidden until focused on.
 @layer components {
   .skip-link {
     position: absolute;
@@ -46,16 +32,11 @@
   }
 }
 
-// ---------------------------------------------------------
-// Utilities
-// ---------------------------------------------------------
 @layer utilities {
   .visually-hidden {
     @include visually-hidden;
   }
 
-  // The utilities layer is last, so these declarations override motion
-  // set in earlier layers without needing !important.
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
